@@ -111,7 +111,63 @@ tags: [agriculture, data, ...]
 
 ## License
 
-MIT License - See [LICENSE](../LICENSE)
+MIT License - See [THIRD_PARTY_NOTICES.md](../../../THIRD_PARTY_NOTICES.md)
+
+## UV Usage
+
+All skills use [UV](https://github.com/astral-sh/uv) for isolated Python environments. This ensures reproducible, sandboxed execution without conflicting dependencies.
+
+### Installing UV
+
+```bash
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows (PowerShell)
+irm https://astral.sh/uv/install.ps1 | iex
+```
+
+### Running Skill Scripts
+
+Each skill can be run in isolation using `uv run`:
+
+```bash
+# Run a skill script with dependencies
+cd field-boundaries
+uv run --with geopandas,matplotlib python -c "
+from field_boundaries import download_fields
+fields = download_fields(count=2, regions=['corn_belt'])
+fields.to_file('my_fields.geojson')
+"
+
+# Or run with a script file
+uv run --with geopandas,matplotlib scripts/example.py
+```
+
+### Per-Skill Dependencies
+
+Each skill specifies its own dependencies in the script or SKILL.md. Common dependencies:
+
+| Skill               | Dependencies                |
+| ------------------- | --------------------------- |
+| field-boundaries    | geopandas, matplotlib       |
+| ssurgo-soil         | geopandas, pandas, requests |
+| nasa-power-weather  | pandas, requests, xarray    |
+| cdl-cropland        | rasterio, geopandas         |
+| sentinel2-imagery   | sentinelsat, rasterio       |
+| landsat-imagery     | landsatxplore, rasterio     |
+| interactive-web-map | folium, geopandas           |
+| eda-explore         | pandas, numpy               |
+| eda-visualize       | pandas, matplotlib, seaborn |
+| eda-correlate       | pandas, scipy               |
+| eda-time-series     | pandas, matplotlib          |
+| eda-compare         | pandas, scipy               |
+
+### Updating Skills from Upstream
+
+```bash
+git subtree pull --prefix=.skills/ag-skills ag-skills skills-content --squash
+```
 
 ## Citation
 
