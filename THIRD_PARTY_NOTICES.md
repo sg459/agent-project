@@ -8,7 +8,7 @@ This file contains attributions and license information for third-party componen
 
 | Field           | Value                                                                                |
 | --------------- | ------------------------------------------------------------------------------------ |
-| **Source**      | https://github.com/borealBytes/ag-skills                                             |
+| **Source**      | <https://github.com/borealBytes/ag-skills>                                             |
 | **Branch**      | skills-content                                                                       |
 | **License**     | MIT (as stated in upstream README)                                                   |
 | **Description** | Agricultural data analysis skills for downloading and analyzing US agricultural data |

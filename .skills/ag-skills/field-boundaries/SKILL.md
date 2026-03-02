@@ -253,7 +253,7 @@ Convenience function that filters to the Maumee watershed region in northwest Oh
 ## Data Source
 
 - **Primary Source**: USDA NASS Crop Sequence Boundaries via Source Cooperative
-- **Source URL**: https://data.source.coop/fiboa/us-usda-cropland/us_usda_cropland.parquet
+- **Source URL**: <https://data.source.coop/fiboa/us-usda-cropland/us_usda_cropland.parquet>
 - **Original Source**: USDA NASS Crop Sequence Boundaries
 - **Coverage**: Contiguous United States
 - **Update Frequency**: Annual
