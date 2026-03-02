@@ -1,6 +1,6 @@
 ---
 name: field-boundaries
-description: Download USDA NASS Crop Sequence Boundaries for agricultural fields. Includes functions for downloading, visualizing, and exporting field boundary data.
+description: Download USDA NASS Crop Sequence Boundaries for agricultural fields. Includes functions for downloading, visualizing, and exporting field boundary data. Supports real data from Source Cooperative for Ohio/Maumee watershed.
 version: 1.0.0
 author: Boreal Bytes
 tags: [usda, nass, boundaries, geospatial, download]
@@ -131,6 +131,39 @@ export_fields(large_fields, 'data/large_fields.geojson', 'geojson')
 export_fields(large_fields, 'data/large_fields.parquet', 'geoparquet')
 ```
 
+### Example 3: Download Real Ohio/Maumee Watershed Data
+
+```python
+from field_boundaries import download_ohio_fields, download_maumee_fields, get_summary
+
+# Download 200 fields from Ohio (Maumee watershed region)
+fields = download_maumee_fields(
+    count=200,
+    crops=['corn', 'soybeans'],
+    output_path='data/fields/ohio_maumee_200.geojson'
+)
+
+# Get summary
+summary = get_summary(fields)
+print(f"Fields: {summary['total_fields']}")
+print(f"Area: {summary['total_area_acres']:.1f} acres")
+print(f"Crops: {summary['crops']}")
+```
+
+### Example 4: Download Ohio Fields with Custom Bounding Box
+
+```python
+from field_boundaries import download_ohio_fields
+
+# Download fields from custom bounding box (min_lon, min_lat, max_lon, max_lat)
+fields = download_ohio_fields(
+    count=100,
+    bbox=(-84.0, 41.5, -83.0, 41.8),  # Custom region in northwest Ohio
+    crops=['corn'],
+    output_path='data/fields/custom_region.geojson'
+)
+```
+
 ## Python API Reference
 
 ### `download_fields(count, regions, crops, output_path)`
@@ -188,13 +221,44 @@ Export fields to file.
 - `output_path` (str): Output file path
 - `format` (str): 'geojson' or 'geoparquet'
 
+### `download_ohio_fields(count, bbox, crops, output_path, use_cache)`
+
+Download real USDA NASS field boundaries for Ohio (or custom bounding box).
+Downloads from Source Cooperative GeoParquet and filters to Ohio region.
+
+**Parameters:**
+
+- `count` (int): Number of fields to download (default: 200)
+- `bbox` (tuple): Optional bounding box (min_lon, min_lat, max_lon, max_lat)
+- `crops` (list): Optional crop types to filter ('corn', 'soybeans', 'wheat', 'cotton')
+- `output_path` (str): Optional output file path
+- `use_cache` (bool): Use cached national data if available (default: True)
+
+**Returns:** GeoDataFrame with Ohio field boundaries
+
+### `download_maumee_fields(count, crops, output_path, use_cache)`
+
+Download real USDA NASS field boundaries from the Maumee watershed (Ohio portion).
+Convenience function that filters to the Maumee watershed region in northwest Ohio.
+
+**Parameters:**
+
+- `count` (int): Number of fields to download (default: 200)
+- `crops` (list): Optional crop types to filter
+- `output_path` (str): Optional output file path
+- `use_cache` (bool): Use cached national data if available (default: True)
+
+**Returns:** GeoDataFrame with Maumee watershed field boundaries
+
 ## Data Source
 
-- **Source**: USDA NASS Crop Sequence Boundaries
+- **Primary Source**: USDA NASS Crop Sequence Boundaries via Source Cooperative
+- **Source URL**: https://data.source.coop/fiboa/us-usda-cropland/us_usda_cropland.parquet
+- **Original Source**: USDA NASS Crop Sequence Boundaries
 - **Coverage**: Contiguous United States
 - **Update Frequency**: Annual
 - **Format**: GeoJSON (vector)
-- **CRS**: EPSG:4326 (WGS84)
+- **CRS**: EPSG:4326 (WGS84) for output, EPSG:5070 for area calculations
 
 ## Output Files
 

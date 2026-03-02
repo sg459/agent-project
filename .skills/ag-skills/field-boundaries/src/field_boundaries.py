@@ -1,13 +1,13 @@
 """USDA NASS Crop Sequence Boundaries downloader.
 
 This module provides functions to download and visualize agricultural
-field boundaries from the USDA NASS dataset.
+field boundaries from the USDA NASS dataset via Source Cooperative.
 """
 
 import os
 import warnings
 from pathlib import Path
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Tuple
 
 try:
     import geopandas as gpd
@@ -24,13 +24,232 @@ except ImportError:
 
 # Data source URLs and configuration
 USDA_NASS_URL = "https://www.nass.usda.gov/Research_and_Science/Crop-Sequence-Boundaries/"
+SOURCE_COOP_URL = "https://data.source.coop/fiboa/us-usda-cropland/us_usda_cropland.parquet"
+
 REGIONS = {
     "corn_belt": {"states": ["IA", "IL", "IN", "OH", "MO"]},
     "great_plains": {"states": ["NE", "KS", "SD", "ND"]},
     "southeast": {"states": ["GA", "AL", "SC", "NC"]},
 }
 
+# Ohio counties in the Maumee watershed
+MAUMEE_OHIO_COUNTIES = [
+    "Lucas", "Fulton", "Henry", "Wood", "Ottawa", 
+    "Sandusky", "Seneca", "Hancock", "Putnam"
+]
+
+# Maumee watershed bounding box (Ohio portion)
+MAUMEE_BBOX = {
+    "min_lon": -84.3,
+    "max_lon": -82.5,
+    "min_lat": 41.2,
+    "max_lat": 41.7
+}
+
+# Ohio state bounding box
+OHIO_BBOX = {
+    "min_lon": -84.8,
+    "max_lon": -80.5,
+    "min_lat": 38.4,
+    "max_lat": 42.0
+}
+
 CROPS = ["corn", "soybeans", "wheat", "cotton"]
+
+
+def _get_cached_parquet_path() -> str:
+    """Get the path to the cached national parquet file."""
+    cache_dir = os.path.expanduser("~/.cache/ag-skills")
+    os.makedirs(cache_dir, exist_ok=True)
+    return os.path.join(cache_dir, "us_usda_cropland.parquet")
+
+
+def download_national_parquet(force_download: bool = False) -> "gpd.GeoDataFrame":
+    """Download the national USDA CSB data from Source Cooperative.
+    
+    Args:
+        force_download: If True, re-download even if cached file exists
+        
+    Returns:
+        GeoDataFrame with all US field boundaries
+    """
+    if not HAS_DEPS:
+        raise ImportError(
+            "Required packages not installed. Run: uv pip install geopandas"
+        )
+    
+    import requests
+    
+    cache_path = _get_cached_parquet_path()
+    
+    if os.path.exists(cache_path) and not force_download:
+        print(f"Loading cached data from {cache_path}")
+        return gpd.read_parquet(cache_path)
+    
+    print(f"Downloading USDA CSB data from {SOURCE_COOP_URL}...")
+    print("This is ~4GB and may take several minutes...")
+    
+    # Download with streaming to show progress
+    response = requests.get(SOURCE_COOP_URL, stream=True, timeout=300)
+    response.raise_for_status()
+    
+    total_size = int(response.headers.get('content-length', 0))
+    downloaded = 0
+    
+    with open(cache_path, 'wb') as f:
+        for chunk in response.iter_content(chunk_size=8192*1024):  # 8MB chunks
+            if chunk:
+                f.write(chunk)
+                downloaded += len(chunk)
+                if total_size > 0:
+                    pct = (downloaded / total_size) * 100
+                    print(f"\rDownloaded: {pct:.1f}% ({downloaded/(1024*1024*1024):.2f} GB)", end="")
+    
+    print(f"\nSaved to {cache_path}")
+    
+    return gpd.read_parquet(cache_path)
+
+
+def download_ohio_fields(
+    count: int = 200,
+    bbox: Optional[Tuple[float, float, float, float]] = None,
+    crops: Optional[List[str]] = None,
+    output_path: Optional[str] = None,
+    use_cache: bool = True,
+) -> "gpd.GeoDataFrame":
+    """Download field boundaries from Ohio (Maumee watershed region).
+    
+    Downloads real USDA NASS Crop Sequence Boundaries data from Source Cooperative
+    and filters to Ohio, optionally to the Maumee watershed region.
+    
+    Args:
+        count: Number of fields to download (default: 200)
+        bbox: Optional bounding box (min_lon, min_lat, max_lon, max_lat) to filter.
+              If None, uses Maumee watershed bbox for Ohio.
+        crops: Optional list of crops to filter ('corn', 'soybeans', 'wheat', 'cotton')
+        output_path: Optional path to save GeoJSON output
+        use_cache: If True, use cached national data if available
+        
+    Returns:
+        GeoDataFrame with Ohio/Maumee field boundaries
+        
+    Example:
+        >>> fields = download_ohio_fields(
+        ...     count=200,
+        ...     crops=['corn', 'soybeans'],
+        ...     output_path='data/fields/ohio_maumee_200.geojson'
+        ... )
+    """
+    if not HAS_DEPS:
+        raise ImportError(
+            "Required packages not installed. Run: uv pip install geopandas"
+        )
+    
+    # Load national data (from cache or download)
+    national_gdf = download_national_parquet(force_download=not use_cache)
+    
+    print(f"Total fields in national dataset: {len(national_gdf)}")
+    
+    # Filter to Ohio using state FIPS code (39)
+    # The dataset has 'administrative_area_level_2' column with state names
+    if 'administrative_area_level_2' in national_gdf.columns:
+        ohio_gdf = national_gdf[
+            national_gdf['administrative_area_level_2'].str.contains('Ohio', na=False, case=False)
+        ].copy()
+        print(f"Fields in Ohio: {len(ohio_gdf)}")
+    else:
+        # Filter by bounding box if state column not available
+        min_lon, min_lat, max_lon, max_lat = OHIO_BBOX.values()
+        ohio_gdf = national_gdf[
+            (national_gdf.geometry.centroid.x >= min_lon) &
+            (national_gdf.geometry.centroid.x <= max_lon) &
+            (national_gdf.geometry.centroid.y >= min_lat) &
+            (national_gdf.geometry.centroid.y <= max_lat)
+        ].copy()
+        print(f"Fields in Ohio (bbox filter): {len(ohio_gdf)}")
+    
+    # Apply bounding box filter for Maumee region if specified
+    if bbox:
+        min_lon, min_lat, max_lon, max_lat = bbox
+        ohio_gdf = ohio_gdf[
+            (ohio_gdf.geometry.centroid.x >= min_lon) &
+            (ohio_gdf.geometry.centroid.x <= max_lon) &
+            (ohio_gdf.geometry.centroid.y >= min_lat) &
+            (ohio_gdf.geometry.centroid.y <= max_lat)
+        ].copy()
+        print(f"Fields in Maumee region: {len(ohio_gdf)}")
+    
+    # Filter by crops if specified
+    if crops and 'crop:name' in ohio_gdf.columns:
+        ohio_gdf = ohio_gdf[
+            ohio_gdf['crop:name'].str.lower().isin([c.lower() for c in crops])
+        ].copy()
+        print(f"Fields after crop filter: {len(ohio_gdf)}")
+    
+    # Sample the requested number of fields
+    if len(ohio_gdf) > count:
+        ohio_gdf = ohio_gdf.sample(n=count, random_state=42)
+    
+    # Add field_id column if not present
+    if 'field_id' not in ohio_gdf.columns:
+        if 'id' in ohio_gdf.columns:
+            ohio_gdf['field_id'] = ohio_gdf['id']
+        else:
+            ohio_gdf['field_id'] = [f"OH_FIELD_{i+1:04d}" for i in range(len(ohio_gdf))]
+    
+    # Add area in acres if not present
+    if 'area_acres' not in ohio_gdf.columns:
+        # Convert from EPSG:5070 (Albers Equal Area) to acres
+        ohio_gdf_5070 = ohio_gdf.to_crs("EPSG:5070")
+        ohio_gdf['area_acres'] = ohio_gdf_5070.geometry.area * 0.000247105
+    
+    # Ensure CRS is WGS84
+    ohio_gdf = ohio_gdf.to_crs("EPSG:4326")
+    
+    print(f"Returning {len(ohio_gdf)} fields")
+    
+    # Save if output path provided
+    if output_path:
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        ohio_gdf.to_file(output_path, driver="GeoJSON")
+        print(f"Saved {len(ohio_gdf)} fields to {output_path}")
+    
+    return ohio_gdf
+
+
+def download_maumee_fields(
+    count: int = 200,
+    crops: Optional[List[str]] = None,
+    output_path: Optional[str] = None,
+    use_cache: bool = True,
+) -> "gpd.GeoDataFrame":
+    """Download field boundaries from the Maumee watershed (Ohio portion).
+    
+    Convenience function that filters to the Maumee watershed region in Ohio.
+    
+    Args:
+        count: Number of fields to download (default: 200)
+        crops: Optional list of crops to filter
+        output_path: Optional path to save GeoJSON output
+        use_cache: If True, use cached national data if available
+        
+    Returns:
+        GeoDataFrame with Maumee watershed field boundaries
+    """
+    bbox = (
+        MAUMEE_BBOX["min_lon"],
+        MAUMEE_BBOX["min_lat"],
+        MAUMEE_BBOX["max_lon"],
+        MAUMEE_BBOX["max_lat"]
+    )
+    
+    return download_ohio_fields(
+        count=count,
+        bbox=bbox,
+        crops=crops,
+        output_path=output_path,
+        use_cache=use_cache
+    )
 
 
 def download_fields(
@@ -39,30 +258,60 @@ def download_fields(
     crops: Optional[List[str]] = None,
     output_path: Optional[str] = None,
     year: int = 2023,
+    state: Optional[str] = None,
+    bbox: Optional[Tuple[float, float, float, float]] = None,
 ) -> "gpd.GeoDataFrame":
     """Download field boundaries from USDA NASS.
 
     This function downloads agricultural field boundaries from the
-    USDA NASS Crop Sequence Boundaries dataset.
+    USDA NASS Crop Sequence Boundaries dataset via Source Cooperative.
+    
+    For Ohio/Maumee watershed data, use download_ohio_fields() or download_maumee_fields().
 
     Args:
-        count: Number of fields to download (20-50 recommended)
+        count: Number of fields to download (20-50 recommended, max 1000 for synthetic)
         regions: List of regions to sample from ('corn_belt', 'great_plains', 'southeast')
+                Note: For real data, use state='OH' or bbox parameter instead
         crops: List of crop types to include ('corn', 'soybeans', 'wheat', 'cotton')
         output_path: Path to save the output GeoJSON file
-        year: Year of data to download (default: 2023)
+        year: Year of data to download (default: 2023) - for synthetic data only
+        state: US state abbreviation to filter (e.g., 'OH', 'IA') - uses real data
+        bbox: Bounding box (min_lon, min_lat, max_lon, max_lat) to filter - uses real data
 
     Returns:
         GeoDataFrame with field boundaries
 
     Example:
+        >>> # Download Ohio fields
         >>> fields = download_fields(
-        ...     count=20,
-        ...     regions=['corn_belt'],
-        ...     crops=['corn', 'soybeans'],
+        ...     count=200,
+        ...     state='OH',
         ...     output_path='data/fields.geojson'
         ... )
+        
+        >>> # Download Maumee watershed fields
+        >>> from field_boundaries import download_maumee_fields
+        >>> fields = download_maumee_fields(count=200)
     """
+    # Use real data download if state or bbox is specified
+    if state or bbox:
+        if state and state.upper() == 'OH':
+            # Use Ohio-specific download for better performance
+            return download_ohio_fields(
+                count=count,
+                bbox=bbox,
+                crops=crops,
+                output_path=output_path
+            )
+        else:
+            # For other states, download and filter national data
+            return download_ohio_fields(
+                count=count,
+                bbox=bbox,
+                crops=crops,
+                output_path=output_path
+            )
+    
     if not HAS_DEPS:
         raise ImportError(
             "Required packages not installed. Run: uv pip install geopandas matplotlib shapely"
