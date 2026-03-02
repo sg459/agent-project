@@ -137,11 +137,12 @@ git push origin feat/{feature-name}
 
 When working on this repo, check for guidance in this order:
 
-1. **This file** (`custom-instructions.md`) — project-specific rules (most specific)
-2. **`agentic_coding.md`** — agent autonomy boundaries
-3. **`contribute_standards.md`** — universal coding and PR standards
-4. **`markdown_style_guide.md`** / **`mermaid_style_guide.md`** — documentation standards
-5. **`adr/`** — architecture decision records (rationale for past decisions)
+1. **Skills** (`.skills/ag-skills/`) — Check for relevant skills first (Agent Skills IO format)
+2. **This file** (`custom-instructions.md`) — project-specific rules (most specific)
+3. **`agentic_coding.md`** — agent autonomy boundaries
+4. **`contribute_standards.md`** — universal coding and PR standards
+5. **`markdown_style_guide.md`** / **`mermaid_style_guide.md`** — documentation standards
+6. **`adr/`** — architecture decision records (rationale for past decisions)
 
 If you find **conflicting guidance**, stop and ask for confirmation.
 

@@ -20,6 +20,43 @@ Read these files in order before starting any task:
 
 ---
 
+## 🤖 Agent Skills
+
+This repo includes agricultural data skills in `.skills/ag-skills/`. **Always check for relevant skills before starting any task.**
+
+- Skills follow [Agent Skills IO](https://agentskills.io) format
+- Located in `.skills/ag-skills/` directory at repo root
+- Auto-discovered by compatible agents (OpenCode, Claude Code, Cursor, etc.)
+- Use `uv run` for skill scripts (see `.skills/ag-skills/README.md`)
+
+### Available Skills
+
+**Data Download:**
+
+- `field-boundaries` - USDA NASS Crop Sequence Boundaries
+- `ssurgo-soil` - USDA NRCS SSURGO soil data
+- `nasa-power-weather` - NASA POWER weather data
+- `cdl-cropland` - USDA Cropland Data Layer
+- `sentinel2-imagery` - ESA Sentinel-2 satellite imagery
+- `landsat-imagery` - USGS Landsat satellite imagery
+- `interactive-web-map` - Interactive web maps
+
+**EDA/Analysis:**
+
+- `eda-explore` - Data exploration
+- `eda-visualize` - Data visualization
+- `eda-correlate` - Correlation analysis
+- `eda-time-series` - Time series analysis
+- `eda-compare` - Group comparisons
+
+### Updating Skills
+
+```bash
+git subtree pull --prefix=.skills/ag-skills ag-skills skills-content --squash
+```
+
+---
+
 ## 📋 What to load by task type
 
 ### Simple fixes or small features

@@ -1,0 +1,21 @@
+field_id,soil_series,soil_name,drainage_class,organic_matter_pct,ph,awc,clay_pct,cec,bulk_density
+391623000245685,Hoytville,"Hoytville clay loam, 0 to 1 percent slopes",Very poorly drained,4.75,6.7,0.18,36.0,26.5,1.32
+391623000245868,Nappanee,"Nappanee loam, 0 to 2 percent slopes",Somewhat poorly drained,2.0,6.2,0.22,23.5,16.1,1.4
+391623001193287,Spinks,"Spinks loamy fine sand, 0 to 6 percent slopes",Well drained,1.75,6.2,0.09,8.5,11.5,1.55
+391623001532050,Hoytville,"Hoytville silty clay loam, 0 to 1 percent slopes",Very poorly drained,4.5,6.7,0.21,39.0,26.5,1.32
+391623001532073,Mermill,Mermill clay loam,Very poorly drained,4.5,6.3,0.17,29.5,23.5,1.45
+391623002233624,Nappanee,"Nappanee silty clay loam, 0 to 2 percent slopes",Somewhat poorly drained,2.0,6.0,0.18,36.0,12.5,1.4
+391623002240612,Fulton,"Fulton silty clay loam, 0 to 2 percent slopes",Somewhat poorly drained,2.5,6.5,0.18,33.5,28.0,1.45
+391623002242386,Toledo,"Toledo silty clay, 0 to 1 percent slopes",Very poorly drained,4.34,6.4,0.13,49.0,32.3,1.3
+391623002243787,St. Clair,"St. Clair silty clay loam, 4 to 12 percent slopes, eroded",Moderately well drained,2.0,6.5,0.2,33.5,15.0,1.55
+391623003947118,Hoytville,"Hoytville silty clay loam, 0 to 1 percent slopes",Very poorly drained,4.5,6.7,0.21,39.0,26.5,1.32
+391623003947189,Dunbridge,"Dunbridge sandy loam, 1 to 4 percent slopes",Well drained,3.0,7.0,0.17,9.0,10.5,1.43
+391623004117828,Hoytville,"Hoytville clay loam, 0 to 1 percent slopes",Very poorly drained,4.75,6.7,0.18,36.0,26.5,1.32
+391623004118842,Colonie,"Colonie fine sand, 1 to 6 percent slopes",Well drained,1.25,5.9,0.1,5.0,4.5,1.25
+391623004119707,Hoytville,"Hoytville clay loam, 0 to 1 percent slopes",Very poorly drained,4.75,6.7,0.18,36.0,26.5,1.32
+391623004291427,Hoytville,"Hoytville clay loam, 0 to 1 percent slopes",Very poorly drained,4.75,6.7,0.18,36.0,26.5,1.32
+391623004303760,Toledo,"Toledo silty clay, 0 to 1 percent slopes",Very poorly drained,4.34,6.4,0.13,49.0,32.3,1.3
+391623004305230,Kibbie,"Kibbie fine sandy loam, 0 to 2 percent slopes",Somewhat poorly drained,3.0,6.5,0.18,11.0,12.5,1.53
+391623004305517,Dunbridge,"Dunbridge loamy sand, 0 to 2 percent slopes",Well drained,3.0,7.0,0.12,6.0,9.5,1.5
+391623004307136,Del Rey,"Del Rey silt loam, 0 to 2 percent slopes",Somewhat poorly drained,2.5,5.9,0.23,21.0,16.0,1.4
+391623004307950,Hoytville,"Hoytville clay loam, 0 to 1 percent slopes",Very poorly drained,4.75,6.7,0.18,36.0,26.5,1.32

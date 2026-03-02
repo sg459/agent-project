@@ -125,3 +125,8 @@ test-results/
 .cache/
 tmp/
 temp/
+
+# ===========================
+# Data (untracked - regenerate from source APIs)
+# ===========================
+data/
