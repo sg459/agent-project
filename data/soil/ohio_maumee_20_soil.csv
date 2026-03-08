@@ -1,0 +1,125 @@
+mukey,muname,compname,comppct_r,drainagecl,hzdept_r,hzdepb_r,om_r,ph1to1h2o_r,awc_r,claytotal_r,sandtotal_r,silttotal_r,dbthirdbar_r,cec7_r,field_id
+169841,"Fulton silty clay loam, 0 to 2 percent slopes",Fulton,90,Somewhat poorly drained,0,23,2.5,6.5,0.18,33.5,17.5,49.0,1.45,28.0,391623002240612
+169841,"Fulton silty clay loam, 0 to 2 percent slopes",Fulton,90,Somewhat poorly drained,23,81,0.75,6.7,0.14,52.5,3.1,44.4,1.55,29.0,391623002240612
+169850,"Latty silty clay, till substratum, 0 to 1 percent slopes",Latty,87,Very poorly drained,0,18,4.8,6.5,0.13,44.0,15.0,41.0,1.29,24.0,391623002240612
+169850,"Latty silty clay, till substratum, 0 to 1 percent slopes",Latty,87,Very poorly drained,18,60,2.0,7.2,0.12,49.0,10.0,41.0,1.33,20.9,391623002240612
+2399584,"Hoytville silty clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,23,4.5,6.7,0.21,39.0,19.0,42.0,1.32,26.5,391623003947118
+2399584,"Hoytville silty clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,23,97,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623003947118
+169574,Millsdale silty clay loam,Millsdale,85,Very poorly drained,0,33,5.5,6.7,0.21,29.5,17.5,53.0,1.4,28.0,391623003947118
+2399566,"Colonie fine sand, 1 to 6 percent slopes",Colonie,92,Well drained,0,20,1.25,5.9,0.1,5.0,93.0,2.0,1.25,4.5,391623004118842
+2399566,"Colonie fine sand, 1 to 6 percent slopes",Colonie,92,Well drained,20,54,0.5,5.9,0.05,5.0,94.0,1.0,1.35,3.5,391623004118842
+169105,Pewamo clay loam,Pewamo,90,Very poorly drained,0,25,4.0,6.7,0.2,33.5,34.2,32.3,1.45,17.5,391623004118842
+169105,Pewamo clay loam,Pewamo,90,Very poorly drained,25,145,1.25,6.7,0.16,42.5,28.1,29.4,1.55,15.0,391623004118842
+169089,"Haskins loam, 0 to 3 percent slopes",Haskins,85,Somewhat poorly drained,0,23,2.5,6.2,0.2,16.0,43.8,40.2,1.38,10.5,391623004118842
+169095,Mermill loam,Mermill,85,Very poorly drained,0,23,4.5,6.5,0.18,19.5,42.4,38.1,1.4,19.5,391623004118842
+169108,"Rimer loamy fine sand, 0 to 3 percent slopes",Rimer,85,Somewhat poorly drained,0,23,2.0,6.2,0.1,9.0,81.8,9.2,1.5,9.0,391623004118842
+169089,"Haskins loam, 0 to 3 percent slopes",Haskins,85,Somewhat poorly drained,23,64,0.25,6.2,0.14,26.5,55.8,17.7,1.58,14.0,391623004118842
+169095,Mermill loam,Mermill,85,Very poorly drained,23,81,0.75,6.7,0.14,26.5,55.8,17.7,1.6,14.0,391623004118842
+169108,"Rimer loamy fine sand, 0 to 3 percent slopes",Rimer,85,Somewhat poorly drained,23,58,0.7,6.2,0.09,9.0,90.0,1.0,1.55,5.5,391623004118842
+170405,"Toledo silty clay, 0 to 1 percent slopes",Toledo,90,Very poorly drained,0,23,4.34,6.4,0.13,49.0,5.0,46.0,1.3,32.3,391623002242386
+170405,"Toledo silty clay, 0 to 1 percent slopes",Toledo,90,Very poorly drained,23,87,1.48,6.9,0.12,48.0,4.0,48.0,1.4,29.8,391623002242386
+170398,"Nappanee silty clay loam, 0 to 3 percent slopes",Nappanee,85,Somewhat poorly drained,0,20,2.0,6.2,0.2,36.0,7.7,56.3,1.4,12.5,391623002242386
+170398,"Nappanee silty clay loam, 0 to 3 percent slopes",Nappanee,85,Somewhat poorly drained,20,86,0.5,6.5,0.11,52.5,2.6,44.9,1.6,12.5,391623002242386
+172131,"Dunbridge loamy sand, 0 to 2 percent slopes",Dunbridge,90,Well drained,0,33,3.0,7.0,0.12,6.0,84.9,9.1,1.5,9.5,391623004305517
+172139,"Fox loam, 2 to 6 percent slopes",Fox,90,Well drained,0,13,2.0,6.2,0.21,13.5,45.0,41.5,1.45,12.0,391623004305517
+172139,"Fox loam, 2 to 6 percent slopes",Fox,90,Well drained,13,71,0.25,6.8,0.15,26.5,35.2,38.3,1.6,17.0,391623004305517
+172120,"Castalia very channery loam, 2 to 6 percent slopes",Castalia,85,Well drained,0,20,4.5,7.9,0.08,16.0,43.8,40.2,1.28,18.0,391623004305517
+172120,"Castalia very channery loam, 2 to 6 percent slopes",Castalia,85,Well drained,20,33,1.25,7.9,0.08,16.0,43.8,40.2,1.35,8.5,391623004305517
+172150,"Joliet silt loam, 0 to 1 percent slopes",Joliet,83,Poorly drained,0,36,4.5,7.3,0.21,23.5,24.5,52.0,1.2,22.0,391623004305517
+172154,"Marblehead loam, 0 to 6 percent slopes",Marblehead,80,Somewhat excessively drained,0,15,5.5,7.3,0.19,16.0,43.8,40.2,1.3,14.5,391623004305517
+172154,"Marblehead loam, 0 to 6 percent slopes",Marblehead,80,Somewhat excessively drained,15,20,5.5,7.3,0.19,15.0,65.4,19.6,1.3,13.5,391623004305517
+172154,"Marblehead loam, 0 to 6 percent slopes",Marblehead,80,Somewhat excessively drained,20,25,,,,,,,,,391623004305517
+170403,"St. Clair silty clay loam, 4 to 12 percent slopes, eroded",St. Clair,97,Moderately well drained,0,18,2.0,6.5,0.2,33.5,18.7,47.8,1.55,15.0,391623002243787
+170403,"St. Clair silty clay loam, 4 to 12 percent slopes, eroded",St. Clair,97,Moderately well drained,18,58,0.25,7.0,0.11,55.0,5.0,40.0,1.53,12.5,391623002243787
+170405,"Toledo silty clay, 0 to 1 percent slopes",Toledo,90,Very poorly drained,0,23,4.34,6.4,0.13,49.0,5.0,46.0,1.3,32.3,391623002243787
+170405,"Toledo silty clay, 0 to 1 percent slopes",Toledo,90,Very poorly drained,23,87,1.48,6.9,0.12,48.0,4.0,48.0,1.4,29.8,391623002243787
+170398,"Nappanee silty clay loam, 0 to 3 percent slopes",Nappanee,85,Somewhat poorly drained,0,20,2.0,6.2,0.2,36.0,7.7,56.3,1.4,12.5,391623002243787
+170398,"Nappanee silty clay loam, 0 to 3 percent slopes",Nappanee,85,Somewhat poorly drained,20,86,0.5,6.5,0.11,52.5,2.6,44.9,1.6,12.5,391623002243787
+172151,"Kibbie fine sandy loam, 0 to 2 percent slopes",Kibbie,90,Somewhat poorly drained,0,23,3.0,6.5,0.18,11.0,62.8,26.2,1.53,12.5,391623004305230
+172151,"Kibbie fine sandy loam, 0 to 2 percent slopes",Kibbie,90,Somewhat poorly drained,23,107,0.25,6.7,0.2,26.5,23.5,50.0,1.53,12.5,391623004305230
+172150,"Joliet silt loam, 0 to 1 percent slopes",Joliet,83,Poorly drained,0,36,4.5,7.3,0.21,23.5,24.5,52.0,1.2,22.0,391623004305230
+172158,"Millsdale silty clay loam, 0 to 1 percent slopes",Millsdale,83,Very poorly drained,0,25,5.5,6.7,0.2,31.0,20.0,49.0,1.4,28.0,391623004305230
+172158,"Millsdale silty clay loam, 0 to 1 percent slopes",Millsdale,83,Very poorly drained,25,84,1.25,7.3,0.14,40.0,30.0,30.0,1.53,22.5,391623004305230
+2399822,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,20,4.75,6.7,0.18,36.0,25.0,39.0,1.32,26.5,391623004291427
+2399822,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,20,89,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623004291427
+168323,"Mermill-Aurand complex, 0 to 1 percent slopes",Mermill,60,Very poorly drained,0,23,4.5,6.5,0.21,20.5,42.0,37.5,1.38,19.9,391623004291427
+168323,"Mermill-Aurand complex, 0 to 1 percent slopes",Mermill,60,Very poorly drained,23,89,0.75,6.5,0.14,28.0,34.4,37.6,1.6,15.4,391623004291427
+168269,"Rimer and Tedrow, till substratum, loamy fine sands, 0 to 2 percent slopes",Rimer,46,Somewhat poorly drained,0,20,2.0,6.2,0.11,9.0,81.8,9.2,1.5,9.1,391623004291427
+168283,"Seward and Ottokee, till substratum, loamy fine sands, 2 to 6 percent slopes",Seward,46,Moderately well drained,0,20,2.0,6.2,0.11,9.0,81.8,9.2,1.5,9.1,391623004291427
+168269,"Rimer and Tedrow, till substratum, loamy fine sands, 0 to 2 percent slopes",Rimer,46,Somewhat poorly drained,20,64,0.75,6.2,0.09,10.0,80.8,9.2,1.55,7.0,391623004291427
+168283,"Seward and Ottokee, till substratum, loamy fine sands, 2 to 6 percent slopes",Seward,46,Moderately well drained,20,61,0.75,6.2,0.09,8.5,82.2,9.3,1.5,6.4,391623004291427
+168269,"Rimer and Tedrow, till substratum, loamy fine sands, 0 to 2 percent slopes",Tedrow,44,Somewhat poorly drained,0,36,2.0,6.7,0.1,6.0,77.9,16.1,1.5,7.4,391623004291427
+168283,"Seward and Ottokee, till substratum, loamy fine sands, 2 to 6 percent slopes",Ottokee,44,Moderately well drained,0,23,1.25,6.5,0.11,6.0,77.9,16.1,1.5,5.9,391623004291427
+168283,"Seward and Ottokee, till substratum, loamy fine sands, 2 to 6 percent slopes",Ottokee,44,Moderately well drained,23,117,0.5,6.5,0.08,6.5,77.4,16.1,1.6,4.8,391623004291427
+168323,"Mermill-Aurand complex, 0 to 1 percent slopes",Aurand,35,Somewhat poorly drained,0,28,4.0,6.5,0.2,19.5,42.4,38.1,1.38,18.5,391623004291427
+168323,"Mermill-Aurand complex, 0 to 1 percent slopes",Aurand,35,Somewhat poorly drained,28,59,1.25,6.7,0.14,28.0,36.2,35.8,1.5,16.6,391623004291427
+2399564,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,20,4.75,6.7,0.18,36.0,25.0,39.0,1.32,26.5,391623004117828
+2399564,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,20,89,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623004117828
+169073,"Brady sandy loam, 0 to 3 percent slopes",Brady,85,Somewhat poorly drained,0,20,2.5,6.5,0.14,8.5,68.0,23.5,1.33,12.5,391623004117828
+169089,"Haskins loam, 0 to 3 percent slopes",Haskins,85,Somewhat poorly drained,0,23,2.5,6.2,0.2,16.0,43.8,40.2,1.38,10.5,391623004117828
+169095,Mermill loam,Mermill,85,Very poorly drained,0,23,4.5,6.5,0.18,19.5,42.4,38.1,1.4,19.5,391623004117828
+169108,"Rimer loamy fine sand, 0 to 3 percent slopes",Rimer,85,Somewhat poorly drained,0,23,2.0,6.2,0.1,9.0,81.8,9.2,1.5,9.0,391623004117828
+169119,"Tedrow loamy fine sand, 0 to 3 percent slopes",Tedrow,85,Somewhat poorly drained,0,23,2.0,6.7,0.1,6.0,77.9,16.1,1.5,9.5,391623004117828
+169073,"Brady sandy loam, 0 to 3 percent slopes",Brady,85,Somewhat poorly drained,20,86,0.75,5.8,0.15,13.5,67.0,19.5,1.4,7.0,391623004117828
+169089,"Haskins loam, 0 to 3 percent slopes",Haskins,85,Somewhat poorly drained,23,64,0.25,6.2,0.14,26.5,55.8,17.7,1.58,14.0,391623004117828
+169095,Mermill loam,Mermill,85,Very poorly drained,23,81,0.75,6.7,0.14,26.5,55.8,17.7,1.6,14.0,391623004117828
+169108,"Rimer loamy fine sand, 0 to 3 percent slopes",Rimer,85,Somewhat poorly drained,23,58,0.7,6.2,0.09,9.0,90.0,1.0,1.55,5.5,391623004117828
+169119,"Tedrow loamy fine sand, 0 to 3 percent slopes",Tedrow,85,Somewhat poorly drained,23,66,0.3,6.7,0.09,5.0,78.6,16.4,1.6,4.0,391623004117828
+169556,"Del Rey silt loam, 0 to 2 percent slopes",Del Rey,90,Somewhat poorly drained,0,23,2.5,5.9,0.23,21.0,26.3,52.7,1.4,16.0,391623004307136
+169565,"Haskins sandy loam, 1 to 4 percent slopes",Haskins,90,Somewhat poorly drained,0,30,2.5,6.2,0.15,14.0,66.8,19.2,1.38,8.5,391623004307136
+169567,"Kibbie fine sandy loam, 0 to 2 percent slopes",Kibbie,90,Somewhat poorly drained,0,23,2.5,6.5,0.18,11.0,67.7,21.3,1.53,12.5,391623004307136
+2399585,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,20,4.75,6.7,0.18,36.0,25.0,39.0,1.32,26.5,391623004307136
+2399585,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,20,89,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623004307136
+169556,"Del Rey silt loam, 0 to 2 percent slopes",Del Rey,90,Somewhat poorly drained,23,117,0.5,6.5,0.16,39.0,17.8,43.2,1.53,21.0,391623004307136
+169567,"Kibbie fine sandy loam, 0 to 2 percent slopes",Kibbie,90,Somewhat poorly drained,23,61,0.75,6.5,0.2,26.5,37.9,35.6,1.53,12.5,391623004307136
+168255,"Nappanee loam, 0 to 2 percent slopes",Nappanee,90,Somewhat poorly drained,0,20,2.0,6.2,0.22,23.5,39.2,37.3,1.4,16.1,391623000245868
+168260,"Nappanee silty clay loam, 0 to 2 percent slopes",Nappanee,90,Somewhat poorly drained,0,20,2.0,6.2,0.2,36.0,19.0,45.0,1.4,20.8,391623000245868
+2399822,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,20,4.75,6.7,0.18,36.0,25.0,39.0,1.32,26.5,391623000245868
+168255,"Nappanee loam, 0 to 2 percent slopes",Nappanee,90,Somewhat poorly drained,20,71,0.5,6.5,0.11,52.5,18.2,29.3,1.53,28.0,391623000245868
+168260,"Nappanee silty clay loam, 0 to 2 percent slopes",Nappanee,90,Somewhat poorly drained,20,71,0.5,6.5,0.11,52.5,18.2,29.3,1.53,28.0,391623000245868
+2399822,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,20,89,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623000245868
+168269,"Rimer and Tedrow, till substratum, loamy fine sands, 0 to 2 percent slopes",Rimer,46,Somewhat poorly drained,0,20,2.0,6.2,0.11,9.0,81.8,9.2,1.5,9.1,391623000245868
+168269,"Rimer and Tedrow, till substratum, loamy fine sands, 0 to 2 percent slopes",Rimer,46,Somewhat poorly drained,20,64,0.75,6.2,0.09,10.0,80.8,9.2,1.55,7.0,391623000245868
+168269,"Rimer and Tedrow, till substratum, loamy fine sands, 0 to 2 percent slopes",Tedrow,44,Somewhat poorly drained,0,36,2.0,6.7,0.1,6.0,77.9,16.1,1.5,7.4,391623000245868
+169017,Mermill clay loam,Mermill,93,Very poorly drained,0,23,4.5,6.3,0.17,29.5,33.6,36.9,1.45,23.5,391623001532073
+169017,Mermill clay loam,Mermill,93,Very poorly drained,23,102,0.75,7.0,0.16,26.5,55.0,18.5,1.6,14.0,391623001532073
+169016,Mermill loam,Mermill,91,Very poorly drained,0,23,4.5,6.3,0.19,20.5,42.0,37.5,1.38,19.5,391623001532073
+169016,Mermill loam,Mermill,91,Very poorly drained,23,102,0.75,7.0,0.16,26.5,55.0,18.5,1.6,14.0,391623001532073
+1536661,"Hoytville silty clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,23,4.5,6.7,0.21,39.0,19.0,42.0,1.32,26.5,391623001532073
+1536661,"Hoytville silty clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,23,97,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623001532073
+2399564,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,20,4.75,6.7,0.18,36.0,25.0,39.0,1.32,26.5,391623004119707
+2399564,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,20,89,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623004119707
+169097,"Nappanee loam, 0 to 2 percent slopes",Nappanee,85,Somewhat poorly drained,0,15,2.0,6.2,0.22,23.5,39.2,37.3,1.4,12.5,391623004119707
+169098,"Nappanee loam, 2 to 6 percent slopes",Nappanee,85,Somewhat poorly drained,0,15,2.0,6.2,0.22,23.5,39.2,37.3,1.4,12.5,391623004119707
+169097,"Nappanee loam, 0 to 2 percent slopes",Nappanee,85,Somewhat poorly drained,15,66,0.75,6.5,0.11,52.5,18.2,29.3,1.6,12.5,391623004119707
+169098,"Nappanee loam, 2 to 6 percent slopes",Nappanee,85,Somewhat poorly drained,15,66,0.75,6.5,0.11,52.5,18.2,29.3,1.6,12.5,391623004119707
+169023,"Nappanee silty clay loam, 0 to 2 percent slopes",Nappanee,95,Somewhat poorly drained,0,30,2.0,6.0,0.18,36.0,19.0,45.0,1.4,12.5,391623002233624
+1536661,"Hoytville silty clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,23,4.5,6.7,0.21,39.0,19.0,42.0,1.32,26.5,391623002233624
+1536661,"Hoytville silty clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,23,97,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623002233624
+172187,"Spinks loamy fine sand, 0 to 6 percent slopes",Spinks,95,Well drained,0,25,1.75,6.2,0.09,8.5,84.9,6.6,1.55,11.5,391623001193287
+172188,"Spinks loamy fine sand, 12 to 18 percent slopes",Spinks,95,Well drained,0,33,1.75,6.2,0.09,8.5,84.9,6.6,1.55,11.5,391623001193287
+172194,"Tuscola fine sandy loam, 2 to 6 percent slopes",Tuscola,95,Moderately well drained,0,25,2.0,6.5,0.18,14.0,66.1,19.9,1.48,9.5,391623001193287
+172187,"Spinks loamy fine sand, 0 to 6 percent slopes",Spinks,95,Well drained,25,38,0.25,6.5,0.08,7.5,83.5,9.0,1.55,2.5,391623001193287
+172194,"Tuscola fine sandy loam, 2 to 6 percent slopes",Tuscola,95,Moderately well drained,25,41,0.65,6.5,0.09,10.0,83.5,6.5,1.33,7.0,391623001193287
+172151,"Kibbie fine sandy loam, 0 to 2 percent slopes",Kibbie,90,Somewhat poorly drained,0,23,3.0,6.5,0.18,11.0,62.8,26.2,1.53,12.5,391623001193287
+172193,"Tuscola fine sandy loam, 0 to 2 percent slopes",Tuscola,90,Moderately well drained,0,23,2.0,6.5,0.18,14.0,66.1,19.9,1.42,9.5,391623001193287
+172202,"Zurich silt loam, 6 to 12 percent slopes, eroded",Zurich,90,Moderately well drained,0,23,1.25,6.2,0.23,23.5,9.4,67.1,1.25,17.5,391623001193287
+172151,"Kibbie fine sandy loam, 0 to 2 percent slopes",Kibbie,90,Somewhat poorly drained,23,107,0.25,6.7,0.2,26.5,23.5,50.0,1.53,12.5,391623001193287
+172193,"Tuscola fine sandy loam, 0 to 2 percent slopes",Tuscola,90,Moderately well drained,23,38,0.65,6.5,0.09,10.0,83.5,6.5,1.33,7.0,391623001193287
+172202,"Zurich silt loam, 6 to 12 percent slopes, eroded",Zurich,90,Moderately well drained,23,107,0.35,6.2,0.2,30.0,6.9,63.1,1.45,18.5,391623001193287
+172123,"Colwood loam, 0 to 1 percent slopes",Colwood,87,Very poorly drained,0,28,5.5,7.0,0.22,15.5,44.0,40.5,1.45,17.5,391623001193287
+172123,"Colwood loam, 0 to 1 percent slopes",Colwood,87,Very poorly drained,28,135,0.75,7.0,0.2,26.5,37.9,35.6,1.45,9.0,391623001193287
+2399822,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,20,4.75,6.7,0.18,36.0,25.0,39.0,1.32,26.5,391623000245685
+2399822,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,20,89,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623000245685
+169559,"Dunbridge sandy loam, 1 to 4 percent slopes",Dunbridge,90,Well drained,0,23,3.0,7.0,0.17,9.0,67.7,23.3,1.43,10.5,391623003947189
+169559,"Dunbridge sandy loam, 1 to 4 percent slopes",Dunbridge,90,Well drained,23,76,0.75,7.0,0.14,24.0,58.2,17.8,1.58,12.5,391623003947189
+2399585,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,20,4.75,6.7,0.18,36.0,25.0,39.0,1.32,26.5,391623004307950
+2399585,"Hoytville clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,20,89,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623004307950
+169575,"Nappanee silt loam, 0 to 3 percent slopes",Nappanee,85,Somewhat poorly drained,0,15,2.0,6.2,0.22,23.5,21.7,54.8,1.4,12.5,391623004307950
+169575,"Nappanee silt loam, 0 to 3 percent slopes",Nappanee,85,Somewhat poorly drained,15,61,0.5,6.5,0.11,52.5,18.2,29.3,1.6,12.5,391623004307950
+1536661,"Hoytville silty clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,0,23,4.5,6.7,0.21,39.0,19.0,42.0,1.32,26.5,391623001532050
+1536661,"Hoytville silty clay loam, 0 to 1 percent slopes",Hoytville,90,Very poorly drained,23,97,1.0,7.0,0.09,46.0,18.0,36.0,1.55,26.0,391623001532050
+170405,"Toledo silty clay, 0 to 1 percent slopes",Toledo,90,Very poorly drained,0,23,4.34,6.4,0.13,49.0,5.0,46.0,1.3,32.3,391623004303760
+170405,"Toledo silty clay, 0 to 1 percent slopes",Toledo,90,Very poorly drained,23,87,1.48,6.9,0.12,48.0,4.0,48.0,1.4,29.8,391623004303760
+170398,"Nappanee silty clay loam, 0 to 3 percent slopes",Nappanee,85,Somewhat poorly drained,0,20,2.0,6.2,0.2,36.0,7.7,56.3,1.4,12.5,391623004303760
+170398,"Nappanee silty clay loam, 0 to 3 percent slopes",Nappanee,85,Somewhat poorly drained,20,86,0.5,6.5,0.11,52.5,2.6,44.9,1.6,12.5,391623004303760
