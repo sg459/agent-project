@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d97a3e24dbcc25713a2433d083892be9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+     background-color: white; padding: 15px; border-radius: 8px;
+     border: 2px solid #333; font-size: 13px; line-height: 1.8;
+     box-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+<b style="font-size: 14px;">Dominant Soil Type</b><br>
+<i style="background:#2ecc71;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Colonie<br><i style="background:#f1c40f;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Dunbridge<br><i style="background:#9b59b6;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Fox<br><i style="background:#e74c3c;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Fulton<br><i style="background:#3498db;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Hoytville<br><i style="background:#1abc9c;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Kibbie<br><i style="background:#e91e63;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Mermill<br><i style="background:#95a5a6;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Nappanee<br><i style="background:#8e44ad;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Spinks<br><i style="background:#00bcd4;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>St. Clair<br><i style="background:#ff9800;width:14px;height:14px;display:inline-block;margin-right:6px;border:1px solid #333;border-radius:2px;"></i>Toledo<br></div>
+    
+            <div class="folium-map" id="map_d97a3e24dbcc25713a2433d083892be9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d97a3e24dbcc25713a2433d083892be9 = L.map(
+                "map_d97a3e24dbcc25713a2433d083892be9",
+                {
+                    center: [41.435779378345835, -83.42751572101461],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7a3f5bfac7d30e782115959b412182e2 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7a3f5bfac7d30e782115959b412182e2.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+            var tile_layer_79dd886473fe0bde5e38d735f99b94a9 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_79dd886473fe0bde5e38d735f99b94a9.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+            var tile_layer_a1b16ed29e2ccf24567c744fef5811a7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a1b16ed29e2ccf24567c744fef5811a7.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_8820d4a3b66526dea66a963b45e9dcf5_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#e74c3c", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_8820d4a3b66526dea66a963b45e9dcf5_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_8820d4a3b66526dea66a963b45e9dcf5 = L.geoJson(null, {
+                onEachFeature: geo_json_8820d4a3b66526dea66a963b45e9dcf5_onEachFeature,
+            
+                style: geo_json_8820d4a3b66526dea66a963b45e9dcf5_styler,
+            ...{
+}
+        });
+
+        function geo_json_8820d4a3b66526dea66a963b45e9dcf5_add (data) {
+            geo_json_8820d4a3b66526dea66a963b45e9dcf5
+                .addData(data);
+        }
+            geo_json_8820d4a3b66526dea66a963b45e9dcf5_add({"features": [{"geometry": {"coordinates": [[[-83.38220727321463, 41.66746764363391], [-83.38220727332492, 41.66710831756561], [-83.38157845238187, 41.66710831710349], [-83.3815784526601, 41.666838823098786], [-83.3812191266095, 41.666838823141816], [-83.38121912546191, 41.666479498491626], [-83.38121912677282, 41.66585067582457], [-83.38121912587208, 41.66558118282621], [-83.38094963174571, 41.66558118131329], [-83.38094963093862, 41.66522185613508], [-83.38094963155301, 41.66495236065784], [-83.38121912598388, 41.664952360635795], [-83.38121912577535, 41.664323540633426], [-83.38157845214116, 41.66432354189172], [-83.38310558787566, 41.66432353997014], [-83.38310558802313, 41.664593036330544], [-83.38346491408888, 41.66459303485899], [-83.3837344084175, 41.66459303600502], [-83.38373440941302, 41.66522185494234], [-83.38346491490842, 41.6652218549186], [-83.3834649143687, 41.66585067616208], [-83.38373440852537, 41.666479496486886], [-83.38409373468552, 41.66683882351529], [-83.38409373550962, 41.667108317577664], [-83.38373440936078, 41.667108317559546], [-83.38346491496888, 41.667108317359784], [-83.38346491394117, 41.66746764360414], [-83.383105588031, 41.66746764383788], [-83.38220727321463, 41.66746764363391]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_8820d4a3b66526dea66a963b45e9dcf5.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623002240612<br><b>Crop:</b> Corn<br><b>Area:</b> 16.6 acres<br><b>Dominant Soil:</b> Fulton<br><b>Component %:</b> 90%<br><b>Drainage:</b> Somewhat poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_8820d4a3b66526dea66a963b45e9dcf5.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_163b6cad8d8b65cd467405dfb6b0aeeb_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3498db", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_163b6cad8d8b65cd467405dfb6b0aeeb_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_163b6cad8d8b65cd467405dfb6b0aeeb = L.geoJson(null, {
+                onEachFeature: geo_json_163b6cad8d8b65cd467405dfb6b0aeeb_onEachFeature,
+            
+                style: geo_json_163b6cad8d8b65cd467405dfb6b0aeeb_styler,
+            ...{
+}
+        });
+
+        function geo_json_163b6cad8d8b65cd467405dfb6b0aeeb_add (data) {
+            geo_json_163b6cad8d8b65cd467405dfb6b0aeeb
+                .addData(data);
+        }
+            geo_json_163b6cad8d8b65cd467405dfb6b0aeeb_add({"features": [{"geometry": {"coordinates": [[[-83.2452094577078, 41.33171314686893], [-83.24520945839738, 41.33144365297718], [-83.24485013223038, 41.3314436527033], [-83.24458063722628, 41.3314436522491], [-83.2445806373729, 41.33108432676733], [-83.24485013235794, 41.33108432645576], [-83.24485013232314, 41.33045550556181], [-83.24485013228835, 41.329826685037425], [-83.24485013212598, 41.3295571904965], [-83.24772474127492, 41.32955719017719], [-83.24772474017014, 41.329826685293405], [-83.24736541433124, 41.33045550595126], [-83.24736541380489, 41.331084326344744], [-83.24673659403088, 41.33108432610414], [-83.24610777361251, 41.331084326317615], [-83.24610777277013, 41.331713147271174], [-83.2452094577078, 41.33171314686893]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_163b6cad8d8b65cd467405dfb6b0aeeb.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623003947118<br><b>Crop:</b> Winter Wheat<br><b>Area:</b> 11.1 acres<br><b>Dominant Soil:</b> Hoytville<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_163b6cad8d8b65cd467405dfb6b0aeeb.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_d2572a5e27b041ba0e66f71b340589aa_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#2ecc71", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_d2572a5e27b041ba0e66f71b340589aa_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_d2572a5e27b041ba0e66f71b340589aa = L.geoJson(null, {
+                onEachFeature: geo_json_d2572a5e27b041ba0e66f71b340589aa_onEachFeature,
+            
+                style: geo_json_d2572a5e27b041ba0e66f71b340589aa_styler,
+            ...{
+}
+        });
+
+        function geo_json_d2572a5e27b041ba0e66f71b340589aa_add (data) {
+            geo_json_d2572a5e27b041ba0e66f71b340589aa
+                .addData(data);
+        }
+            geo_json_d2572a5e27b041ba0e66f71b340589aa_add({"features": [{"geometry": {"coordinates": [[[-84.00434246826339, 41.6372660199189], [-84.00398314290848, 41.63726601940545], [-84.00335432213365, 41.63699652546823], [-84.00209668075468, 41.636996524679226], [-84.00209668048102, 41.63663719900903], [-84.00146786029603, 41.636637199152716], [-84.00146785994286, 41.637266019614], [-84.00119836549875, 41.63726601933937], [-84.00101870198384, 41.63726601969148], [-84.00092887022784, 41.636996525481756], [-84.00092886994229, 41.6357388834259], [-84.00092887167511, 41.63511006274198], [-84.00119836639536, 41.635110063482536], [-84.00146786126786, 41.63511006277193], [-84.00146785956545, 41.63475073647197], [-84.00209667992708, 41.635110062866936], [-84.00209667998003, 41.635379557564285], [-84.00245600710566, 41.63573888401612], [-84.00272550144976, 41.63600837863997], [-84.00497128945611, 41.636008378700765], [-84.00497128932065, 41.63573888395279], [-84.00524078388416, 41.635738884088184], [-84.00560010951817, 41.635738883648145], [-84.00560011061557, 41.63636770469017], [-84.00560010956524, 41.6366371992774], [-84.00560010961519, 41.637266019909525], [-84.00586960493618, 41.63726602005028], [-84.00586960501613, 41.63762534592911], [-84.00497128952588, 41.6376253460074], [-84.00497128924376, 41.637266019678556], [-84.00461196284138, 41.63726601992302], [-84.00434246826339, 41.6372660199189]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_d2572a5e27b041ba0e66f71b340589aa.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004118842<br><b>Crop:</b> Soybeans<br><b>Area:</b> 15.8 acres<br><b>Dominant Soil:</b> Colonie<br><b>Component %:</b> 92%<br><b>Drainage:</b> Well drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_d2572a5e27b041ba0e66f71b340589aa.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_fb68dac3729b70964d1f0eaa34f396bf_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#ff9800", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_fb68dac3729b70964d1f0eaa34f396bf_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_fb68dac3729b70964d1f0eaa34f396bf = L.geoJson(null, {
+                onEachFeature: geo_json_fb68dac3729b70964d1f0eaa34f396bf_onEachFeature,
+            
+                style: geo_json_fb68dac3729b70964d1f0eaa34f396bf_styler,
+            ...{
+}
+        });
+
+        function geo_json_fb68dac3729b70964d1f0eaa34f396bf_add (data) {
+            geo_json_fb68dac3729b70964d1f0eaa34f396bf
+                .addData(data);
+        }
+            geo_json_fb68dac3729b70964d1f0eaa34f396bf_add({"features": [{"geometry": {"coordinates": [[[-83.2007475844529, 41.56892245686035], [-83.20074758392118, 41.56766481488564], [-83.20164589974755, 41.56766481510563], [-83.20227472190234, 41.56793431093851], [-83.20227472142302, 41.56766481491886], [-83.20254421563564, 41.56766481536317], [-83.20254421600613, 41.56829363680309], [-83.20164590021366, 41.56856313104124], [-83.20101707959223, 41.56856313176674], [-83.20101708038264, 41.56892245749147], [-83.2016459006272, 41.56892245640609], [-83.20164590141431, 41.56919195124009], [-83.20137640461346, 41.56919195104238], [-83.20137640588142, 41.5695512777628], [-83.1998492691929, 41.56955127845567], [-83.19984927089675, 41.5689224567068], [-83.2007475844529, 41.56892245686035]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_fb68dac3729b70964d1f0eaa34f396bf.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623002242386<br><b>Crop:</b> Soybeans<br><b>Area:</b> 5.8 acres<br><b>Dominant Soil:</b> Toledo<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_fb68dac3729b70964d1f0eaa34f396bf.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_81d5f5db471d56cc7d42c87f9ee62e29_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#9b59b6", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_81d5f5db471d56cc7d42c87f9ee62e29_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_81d5f5db471d56cc7d42c87f9ee62e29 = L.geoJson(null, {
+                onEachFeature: geo_json_81d5f5db471d56cc7d42c87f9ee62e29_onEachFeature,
+            
+                style: geo_json_81d5f5db471d56cc7d42c87f9ee62e29_styler,
+            ...{
+}
+        });
+
+        function geo_json_81d5f5db471d56cc7d42c87f9ee62e29_add (data) {
+            geo_json_81d5f5db471d56cc7d42c87f9ee62e29
+                .addData(data);
+        }
+            geo_json_81d5f5db471d56cc7d42c87f9ee62e29_add({"features": [{"geometry": {"coordinates": [[[-82.77571764718634, 41.40484635277422], [-82.77535832118835, 41.40448702716934], [-82.77535832047226, 41.40421753237623], [-82.77535832156255, 41.403858206005594], [-82.77508882625344, 41.40358871215475], [-82.77472950063878, 41.40358871176421], [-82.77446000558312, 41.4032293853334], [-82.77446000578729, 41.40233107039372], [-82.77410068011825, 41.40233107027547], [-82.7738311855856, 41.40197174398264], [-82.77383118474393, 41.40170224922076], [-82.77472950069718, 41.40170224918068], [-82.77535832094262, 41.401702249641914], [-82.77535832165871, 41.401971743784124], [-82.77697528914868, 41.4019717436874], [-82.77760410900832, 41.4017022495911], [-82.77760410971965, 41.40134292343387], [-82.77760410910138, 41.40107342855216], [-82.77787360417412, 41.40071410397754], [-82.77823292980649, 41.40071410159069], [-82.77850242400076, 41.4007141025194], [-82.7788617511846, 41.40071410304166], [-82.77913124521177, 41.400714103533346], [-82.77949057120205, 41.40071410216932], [-82.7794905709041, 41.40134292302641], [-82.77913124545418, 41.40134292387737], [-82.77886175004784, 41.40134292439442], [-82.77850242443083, 41.40134292436764], [-82.77823293032705, 41.40170224959615], [-82.77823292977025, 41.40197174426875], [-82.77787360428475, 41.402600565069385], [-82.77760410898937, 41.40295989192274], [-82.7776041087484, 41.40322938539904], [-82.77760410882249, 41.40385820685467], [-82.77724478317046, 41.403858206435544], [-82.7769752885495, 41.40385820587174], [-82.77661596294645, 41.40421753221955], [-82.77661596267308, 41.40448702550827], [-82.77661596288928, 41.40484635336982], [-82.77598714114758, 41.40484635371642], [-82.77571764718634, 41.40484635277422]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_81d5f5db471d56cc7d42c87f9ee62e29.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004305517<br><b>Crop:</b> Soybeans<br><b>Area:</b> 21.8 acres<br><b>Dominant Soil:</b> Fox<br><b>Component %:</b> 90%<br><b>Drainage:</b> Well drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_81d5f5db471d56cc7d42c87f9ee62e29.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_60b40723d1b767709df1522b083baa04_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#00bcd4", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_60b40723d1b767709df1522b083baa04_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_60b40723d1b767709df1522b083baa04 = L.geoJson(null, {
+                onEachFeature: geo_json_60b40723d1b767709df1522b083baa04_onEachFeature,
+            
+                style: geo_json_60b40723d1b767709df1522b083baa04_styler,
+            ...{
+}
+        });
+
+        function geo_json_60b40723d1b767709df1522b083baa04_add (data) {
+            geo_json_60b40723d1b767709df1522b083baa04
+                .addData(data);
+        }
+            geo_json_60b40723d1b767709df1522b083baa04_add({"features": [{"geometry": {"coordinates": [[[-83.17280998018265, 41.513945560960806], [-83.17280998044501, 41.51241842564287], [-83.17245065376066, 41.51241842510853], [-83.17245065409693, 41.51205909901478], [-83.17280998014188, 41.5120590996694], [-83.17280998059384, 41.51178960489135], [-83.17280997971719, 41.510172637385125], [-83.17280998033158, 41.50990314222927], [-83.17280998066464, 41.50891499555481], [-83.17370829585732, 41.508914995934], [-83.17406762122853, 41.5089149955172], [-83.1740676216505, 41.50927432153254], [-83.17406762133704, 41.51116078407098], [-83.17370829558372, 41.51116078379905], [-83.17370829536497, 41.5120590996225], [-83.17406762211876, 41.51205909953367], [-83.17406762183569, 41.51304724573565], [-83.17370829601484, 41.513047246425565], [-83.17370829557852, 41.51331674029609], [-83.17370829508722, 41.51394556116537], [-83.1740676217461, 41.51394556100017], [-83.17406762207476, 41.51457438202421], [-83.1728099801962, 41.51457438218152], [-83.17280998048578, 41.514304887611544], [-83.17280998018265, 41.513945560960806]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_60b40723d1b767709df1522b083baa04.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623002243787<br><b>Crop:</b> Soybeans<br><b>Area:</b> 15.1 acres<br><b>Dominant Soil:</b> St. Clair<br><b>Component %:</b> 97%<br><b>Drainage:</b> Moderately well drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_60b40723d1b767709df1522b083baa04.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_4a812902ac76d4a4732a688b2d203ee0_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#1abc9c", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_4a812902ac76d4a4732a688b2d203ee0_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_4a812902ac76d4a4732a688b2d203ee0 = L.geoJson(null, {
+                onEachFeature: geo_json_4a812902ac76d4a4732a688b2d203ee0_onEachFeature,
+            
+                style: geo_json_4a812902ac76d4a4732a688b2d203ee0_styler,
+            ...{
+}
+        });
+
+        function geo_json_4a812902ac76d4a4732a688b2d203ee0_add (data) {
+            geo_json_4a812902ac76d4a4732a688b2d203ee0
+                .addData(data);
+        }
+            geo_json_4a812902ac76d4a4732a688b2d203ee0_add({"features": [{"geometry": {"coordinates": [[[-82.75802083643077, 41.41176338071184], [-82.7580208359162, 41.4114938861837], [-82.75766150952374, 41.411493886273036], [-82.75739201534732, 41.411134559627726], [-82.75739201485125, 41.4108650650146], [-82.75829033065537, 41.41086506515558], [-82.75864965708617, 41.41086506544578], [-82.7589191517837, 41.41086506566619], [-82.75954797143778, 41.41113456025243], [-82.75954797184488, 41.411493885943784], [-82.7592784778478, 41.41176338044021], [-82.75802083643077, 41.41176338071184]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_4a812902ac76d4a4732a688b2d203ee0.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004305230<br><b>Crop:</b> Alfalfa<br><b>Area:</b> 3.7 acres<br><b>Dominant Soil:</b> Kibbie<br><b>Component %:</b> 90%<br><b>Drainage:</b> Somewhat poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_4a812902ac76d4a4732a688b2d203ee0.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_d44016916278c1ae707a5a15223b98ae_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3498db", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_d44016916278c1ae707a5a15223b98ae_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_d44016916278c1ae707a5a15223b98ae = L.geoJson(null, {
+                onEachFeature: geo_json_d44016916278c1ae707a5a15223b98ae_onEachFeature,
+            
+                style: geo_json_d44016916278c1ae707a5a15223b98ae_styler,
+            ...{
+}
+        });
+
+        function geo_json_d44016916278c1ae707a5a15223b98ae_add (data) {
+            geo_json_d44016916278c1ae707a5a15223b98ae
+                .addData(data);
+        }
+            geo_json_d44016916278c1ae707a5a15223b98ae_add({"features": [{"geometry": {"coordinates": [[[-83.66044330742785, 41.39595376055097], [-83.66044330699398, 41.3956842659547], [-83.66017381266182, 41.395684266197605], [-83.66017381246151, 41.395055445589136], [-83.66044330677819, 41.39505544557759], [-83.66080263322635, 41.39505544534858], [-83.66107212723097, 41.395055445786866], [-83.6614314533671, 41.3950554455671], [-83.66170094841061, 41.39505544568495], [-83.6617009487195, 41.39532494054212], [-83.66394673633008, 41.39532494045711], [-83.6642162314685, 41.3953249406025], [-83.66457555741907, 41.395324940428566], [-83.6647552200779, 41.3959537612316], [-83.66475522003078, 41.396313087081026], [-83.66457555747584, 41.39658258191787], [-83.66421623103857, 41.396762244917234], [-83.66394673653286, 41.396762244464156], [-83.66358741026534, 41.39676224445527], [-83.66295859006314, 41.39676224456806], [-83.66232976947096, 41.39658258154418], [-83.66232976914661, 41.396313086593786], [-83.66206027471982, 41.39595376113895], [-83.66170094894102, 41.39568426590689], [-83.66143145388197, 41.3956842660203], [-83.66107212737795, 41.395953760836406], [-83.66107212797712, 41.39631308676453], [-83.66107212842655, 41.396582581291774], [-83.66044330764369, 41.39658258146903], [-83.66044330720975, 41.39631308671048], [-83.66044330742785, 41.39595376055097]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_d44016916278c1ae707a5a15223b98ae.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004291427<br><b>Crop:</b> Soybeans<br><b>Area:</b> 12.1 acres<br><b>Dominant Soil:</b> Hoytville<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_d44016916278c1ae707a5a15223b98ae.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3498db", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0 = L.geoJson(null, {
+                onEachFeature: geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0_onEachFeature,
+            
+                style: geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0_styler,
+            ...{
+}
+        });
+
+        function geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0_add (data) {
+            geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0
+                .addData(data);
+        }
+            geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0_add({"features": [{"geometry": {"coordinates": [[[-83.97505739065528, 41.69673449152711], [-83.97505739082757, 41.69637516542103], [-83.97442857010059, 41.6963751655593], [-83.97191328695418, 41.69637516509608], [-83.97164379259422, 41.69637516566261], [-83.97164379175923, 41.69610567142751], [-83.97128446642373, 41.69610567182086], [-83.97128446482762, 41.69511752421327], [-83.97128446552544, 41.69484802945229], [-83.9712844661106, 41.693231062170234], [-83.97101497016082, 41.693231062838635], [-83.97101497189361, 41.69296156861834], [-83.97353025417864, 41.69296156832418], [-83.97379974893884, 41.692602241593484], [-83.97442856996986, 41.69233274845485], [-83.9747878954789, 41.69233274652004], [-83.97478789391418, 41.69296156852882], [-83.97505738880741, 41.69296156716488], [-83.9754167167727, 41.69296156790689], [-83.9756862104539, 41.693231061413556], [-83.97568620944165, 41.69359038863896], [-83.97568621158271, 41.694219208377945], [-83.97595570573998, 41.69421920911441], [-83.97595570602107, 41.69448870300255], [-83.97595570518818, 41.694848030595814], [-83.97568621101715, 41.694848030084856], [-83.97541671684613, 41.69484802900968], [-83.97505738987344, 41.694848030169055], [-83.97505738893344, 41.69547685008823], [-83.97568621105103, 41.69574634568747], [-83.97604553744848, 41.69610567039545], [-83.97604553680655, 41.69673449125327], [-83.97505739065528, 41.69673449152711]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004117828<br><b>Crop:</b> Corn<br><b>Area:</b> 36.0 acres<br><b>Dominant Soil:</b> Hoytville<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_964e8477ed75da1ed8633fc358fb9277_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#1abc9c", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_964e8477ed75da1ed8633fc358fb9277_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_964e8477ed75da1ed8633fc358fb9277 = L.geoJson(null, {
+                onEachFeature: geo_json_964e8477ed75da1ed8633fc358fb9277_onEachFeature,
+            
+                style: geo_json_964e8477ed75da1ed8633fc358fb9277_styler,
+            ...{
+}
+        });
+
+        function geo_json_964e8477ed75da1ed8633fc358fb9277_add (data) {
+            geo_json_964e8477ed75da1ed8633fc358fb9277
+                .addData(data);
+        }
+            geo_json_964e8477ed75da1ed8633fc358fb9277_add({"features": [{"geometry": {"coordinates": [[[-82.98098268993884, 41.351755919739276], [-82.98098268994883, 41.35148642486549], [-82.98071319473992, 41.35148642522548], [-82.98071319442649, 41.3511270992608], [-82.98071319531786, 41.350498277909814], [-82.98134201559418, 41.35040844631985], [-82.9819708365663, 41.35040844628203], [-82.98197083697202, 41.350498278021526], [-82.98349797273346, 41.350498278446715], [-82.98349797259623, 41.35085760450463], [-82.98349797249331, 41.35112709912788], [-82.9834979722804, 41.35211524578015], [-82.98385729811213, 41.35211524533918], [-82.98385729869126, 41.3527440667343], [-82.98349797220473, 41.35274406653416], [-82.98322847811139, 41.352744066477975], [-82.98322847833572, 41.353013560817246], [-82.9807131949611, 41.353013561368], [-82.98071319480827, 41.352744066052814], [-82.98071319552345, 41.35238474066936], [-82.98098268922988, 41.352384740706334], [-82.98098268993884, 41.351755919739276]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_964e8477ed75da1ed8633fc358fb9277.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004307136<br><b>Crop:</b> Soybeans<br><b>Area:</b> 16.1 acres<br><b>Dominant Soil:</b> Kibbie<br><b>Component %:</b> 90%<br><b>Drainage:</b> Somewhat poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_964e8477ed75da1ed8633fc358fb9277.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_7386113f28ea33740bde5781ad155cb0_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3498db", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_7386113f28ea33740bde5781ad155cb0_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_7386113f28ea33740bde5781ad155cb0 = L.geoJson(null, {
+                onEachFeature: geo_json_7386113f28ea33740bde5781ad155cb0_onEachFeature,
+            
+                style: geo_json_7386113f28ea33740bde5781ad155cb0_styler,
+            ...{
+}
+        });
+
+        function geo_json_7386113f28ea33740bde5781ad155cb0_add (data) {
+            geo_json_7386113f28ea33740bde5781ad155cb0
+                .addData(data);
+        }
+            geo_json_7386113f28ea33740bde5781ad155cb0_add({"features": [{"geometry": {"coordinates": [[[-83.49735199685088, 41.4502156105512], [-83.49699267005353, 41.4502156109057], [-83.4967231761512, 41.45021561062832], [-83.49672317583659, 41.449946116559424], [-83.4969926700611, 41.44994611606828], [-83.49735199667852, 41.44994611583095], [-83.49735199639598, 41.44958678994294], [-83.49762149131985, 41.44958679013672], [-83.49825031190625, 41.4495867888995], [-83.4992384591227, 41.44958678915326], [-83.4992384589943, 41.44994611676087], [-83.49950795346523, 41.44994611641735], [-83.49950795325553, 41.449586789812656], [-83.49986727916455, 41.44958678985027], [-83.49986727908674, 41.44931729534735], [-83.50013677442107, 41.449317295805905], [-83.50112492026459, 41.44931729528338], [-83.5013944151244, 41.449317295757105], [-83.50139441491186, 41.44958679055985], [-83.50175374106749, 41.44958679074499], [-83.50265205701966, 41.449586790464835], [-83.50265205638016, 41.44994611631495], [-83.50238256196218, 41.45021561067711], [-83.50202323630361, 41.45048510563811], [-83.50175374087651, 41.450485105065454], [-83.50139441491831, 41.45048510534891], [-83.50139441519168, 41.450844431331575], [-83.50049609986091, 41.45084443164852], [-83.5004961005858, 41.45048510531436], [-83.49950795341924, 41.45048510517374], [-83.49950795285726, 41.451473252368075], [-83.4992384586767, 41.45147325241177], [-83.49923845889678, 41.45174274683091], [-83.49923845924299, 41.45210207253833], [-83.49887913233395, 41.45237156749897], [-83.49762148994077, 41.45237156699762], [-83.49699267078412, 41.45237156773102], [-83.49699267063345, 41.45210207321158], [-83.49735199614057, 41.45210207268796], [-83.49735199689549, 41.45174274704591], [-83.49735199685088, 41.4502156105512]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_7386113f28ea33740bde5781ad155cb0.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623000245868<br><b>Crop:</b> Winter Wheat<br><b>Area:</b> 21.3 acres<br><b>Dominant Soil:</b> Hoytville<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_7386113f28ea33740bde5781ad155cb0.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_5aad1fe52d9d0ab77dff61893e31c3c2_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#e91e63", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_5aad1fe52d9d0ab77dff61893e31c3c2_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_5aad1fe52d9d0ab77dff61893e31c3c2 = L.geoJson(null, {
+                onEachFeature: geo_json_5aad1fe52d9d0ab77dff61893e31c3c2_onEachFeature,
+            
+                style: geo_json_5aad1fe52d9d0ab77dff61893e31c3c2_styler,
+            ...{
+}
+        });
+
+        function geo_json_5aad1fe52d9d0ab77dff61893e31c3c2_add (data) {
+            geo_json_5aad1fe52d9d0ab77dff61893e31c3c2
+                .addData(data);
+        }
+            geo_json_5aad1fe52d9d0ab77dff61893e31c3c2_add({"features": [{"geometry": {"coordinates": [[[-84.15362836390673, 41.265450850686925], [-84.15365854086369, 41.26503187065763], [-84.15371819555155, 41.26455253571544], [-84.15380802644007, 41.26455253558513], [-84.15461650980654, 41.264552535675435], [-84.15461651019903, 41.26428304099393], [-84.15488600511713, 41.26428304062795], [-84.15587415200359, 41.26428304122589], [-84.15614364647307, 41.26428304087053], [-84.15677246759697, 41.26428304089987], [-84.15713179305783, 41.2642830407321], [-84.1580301083496, 41.26428304055246], [-84.15874876016342, 41.26428304123109], [-84.15901825477985, 41.26428304113762], [-84.15964707604827, 41.26428304055931], [-84.16090471798499, 41.264283040880244], [-84.16126404388962, 41.264283040854494], [-84.16153353760917, 41.264283040782296], [-84.16189286440843, 41.26428304087456], [-84.16189286390191, 41.26455253566166], [-84.16189286372399, 41.264911861593575], [-84.16216235835239, 41.264911861858906], [-84.16216235902442, 41.26518135591418], [-84.16189286456049, 41.26518135575983], [-84.15838943472254, 41.265181355956805], [-84.1574012880958, 41.26518135616921], [-84.15713179293188, 41.265540682435024], [-84.15587415139828, 41.26554068226842], [-84.15524533159943, 41.265540682591904], [-84.15488600495527, 41.26554068244984], [-84.15461651015836, 41.265540682373675], [-84.1542571844087, 41.26554068234974], [-84.15398768946226, 41.26554068183571], [-84.15362836341345, 41.26554068181881], [-84.15362836387223, 41.26581017813991], [-84.15362836294328, 41.266169503826944], [-84.15335886875543, 41.26643899791121], [-84.15264021631076, 41.266438998657726], [-84.15255038540803, 41.26643899819046], [-84.152550385186, 41.266169503154245], [-84.15264021637412, 41.26590000876273], [-84.15299954231402, 41.265900008672865], [-84.15317920634901, 41.26581017708831], [-84.15335886873294, 41.26572034514774], [-84.15362836390673, 41.265450850686925]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_5aad1fe52d9d0ab77dff61893e31c3c2.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623001532073<br><b>Crop:</b> Winter Wheat<br><b>Area:</b> 21.0 acres<br><b>Dominant Soil:</b> Mermill<br><b>Component %:</b> 93%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_5aad1fe52d9d0ab77dff61893e31c3c2.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_33300e2f1772be940f07ab946135b9f2_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3498db", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_33300e2f1772be940f07ab946135b9f2_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_33300e2f1772be940f07ab946135b9f2 = L.geoJson(null, {
+                onEachFeature: geo_json_33300e2f1772be940f07ab946135b9f2_onEachFeature,
+            
+                style: geo_json_33300e2f1772be940f07ab946135b9f2_styler,
+            ...{
+}
+        });
+
+        function geo_json_33300e2f1772be940f07ab946135b9f2_add (data) {
+            geo_json_33300e2f1772be940f07ab946135b9f2
+                .addData(data);
+        }
+            geo_json_33300e2f1772be940f07ab946135b9f2_add({"features": [{"geometry": {"coordinates": [[[-84.03290889531628, 41.575641590973525], [-84.03290889419549, 41.57537209774302], [-84.03281906329778, 41.575372097010714], [-84.03281906295983, 41.57438395063089], [-84.03290889529532, 41.57438394981475], [-84.03326822028266, 41.57438395001784], [-84.03353771534256, 41.57474327608179], [-84.03353771497514, 41.57501277057553], [-84.0338970419845, 41.57564159156309], [-84.03389704143511, 41.57600091712281], [-84.03290889450946, 41.57600091698213], [-84.03290889531628, 41.575641590973525]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_33300e2f1772be940f07ab946135b9f2.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004119707<br><b>Crop:</b> Corn<br><b>Area:</b> 3.0 acres<br><b>Dominant Soil:</b> Hoytville<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_33300e2f1772be940f07ab946135b9f2.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_608ae47cb771fd3b79e6e27050b91186_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#95a5a6", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_608ae47cb771fd3b79e6e27050b91186_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_608ae47cb771fd3b79e6e27050b91186 = L.geoJson(null, {
+                onEachFeature: geo_json_608ae47cb771fd3b79e6e27050b91186_onEachFeature,
+            
+                style: geo_json_608ae47cb771fd3b79e6e27050b91186_styler,
+            ...{
+}
+        });
+
+        function geo_json_608ae47cb771fd3b79e6e27050b91186_add (data) {
+            geo_json_608ae47cb771fd3b79e6e27050b91186
+                .addData(data);
+        }
+            geo_json_608ae47cb771fd3b79e6e27050b91186_add({"features": [{"geometry": {"coordinates": [[[-84.16648249782784, 41.224760828779374], [-84.16612317131589, 41.224491333861565], [-84.16612317129125, 41.22350318665355], [-84.16648249798457, 41.22350318684787], [-84.16648249687007, 41.22287436630327], [-84.16612317084163, 41.222874366773404], [-84.16612317115661, 41.221347230013706], [-84.16612317158156, 41.220987904053786], [-84.16612317100565, 41.22071840957659], [-84.16648249793009, 41.22035908368309], [-84.16666216058341, 41.22035908318098], [-84.16675199176079, 41.22035908372161], [-84.16711131790066, 41.220808241165734], [-84.16738081301354, 41.22134723060271], [-84.16836895922593, 41.221976050863546], [-84.16863845371, 41.22197605091509], [-84.16863845419353, 41.222245545695024], [-84.16863845449033, 41.22260487183709], [-84.16863845411696, 41.22278453445295], [-84.168638453781, 41.222874366658075], [-84.16854862208798, 41.22287436589159], [-84.16836895959635, 41.22287436605291], [-84.16800963327083, 41.22287436639394], [-84.16774013943387, 41.223233692138635], [-84.16738081278908, 41.22386251345367], [-84.16711131871386, 41.22449133373781], [-84.1667519916087, 41.22476082815111], [-84.16648249782784, 41.224760828779374]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_608ae47cb771fd3b79e6e27050b91186.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623002233624<br><b>Crop:</b> Corn<br><b>Area:</b> 14.8 acres<br><b>Dominant Soil:</b> Nappanee<br><b>Component %:</b> 95%<br><b>Drainage:</b> Somewhat poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_608ae47cb771fd3b79e6e27050b91186.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_4ec54ada4e722a0b5a8ad7edf31b9216_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#8e44ad", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_4ec54ada4e722a0b5a8ad7edf31b9216_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_4ec54ada4e722a0b5a8ad7edf31b9216 = L.geoJson(null, {
+                onEachFeature: geo_json_4ec54ada4e722a0b5a8ad7edf31b9216_onEachFeature,
+            
+                style: geo_json_4ec54ada4e722a0b5a8ad7edf31b9216_styler,
+            ...{
+}
+        });
+
+        function geo_json_4ec54ada4e722a0b5a8ad7edf31b9216_add (data) {
+            geo_json_4ec54ada4e722a0b5a8ad7edf31b9216
+                .addData(data);
+        }
+            geo_json_4ec54ada4e722a0b5a8ad7edf31b9216_add({"features": [{"geometry": {"coordinates": [[[-82.57521347321199, 41.37671251720727], [-82.57521347270351, 41.376443022564075], [-82.5755727973126, 41.37617352841129], [-82.57620161959235, 41.3761735284286], [-82.57647111398819, 41.37545487630497], [-82.57683044052388, 41.37527521342387], [-82.57745926072309, 41.37491588679949], [-82.57781858710952, 41.3745565609532], [-82.57835757596288, 41.37428706612901], [-82.57871690203223, 41.37428706606871], [-82.578986397211, 41.37455656110254], [-82.5796152176849, 41.37455656104194], [-82.57997454294149, 41.3742870660098], [-82.58060336437403, 41.373927740581195], [-82.58060336420851, 41.37365824525124], [-82.5806033638183, 41.37329891913647], [-82.58123218364106, 41.373298919475275], [-82.58150167987218, 41.373298919920316], [-82.58150168009449, 41.37392774048496], [-82.58150167910136, 41.37428706618576], [-82.5812321854095, 41.37455656072432], [-82.58060336327358, 41.37491588692521], [-82.58024403859363, 41.37491588734508], [-82.57997454331212, 41.37518538179775], [-82.57997454305105, 41.375544707923574], [-82.57940537714578, 41.375694193382685], [-82.57916606007323, 41.37581420216684], [-82.5789863967983, 41.375993864967334], [-82.57832739920585, 41.37659250786782], [-82.57808808210582, 41.37680234942052], [-82.57772875394579, 41.37680234884964], [-82.57722972612778, 41.376762412225254], [-82.57683044009522, 41.3767125174909], [-82.57557279749958, 41.376712517251214], [-82.57521347321199, 41.37671251720727]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_4ec54ada4e722a0b5a8ad7edf31b9216.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623001193287<br><b>Crop:</b> Soybeans<br><b>Area:</b> 19.3 acres<br><b>Dominant Soil:</b> Spinks<br><b>Component %:</b> 95%<br><b>Drainage:</b> Well drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_4ec54ada4e722a0b5a8ad7edf31b9216.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_9e4aca8ae829d4d945f060a020d3b7b2_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3498db", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_9e4aca8ae829d4d945f060a020d3b7b2_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_9e4aca8ae829d4d945f060a020d3b7b2 = L.geoJson(null, {
+                onEachFeature: geo_json_9e4aca8ae829d4d945f060a020d3b7b2_onEachFeature,
+            
+                style: geo_json_9e4aca8ae829d4d945f060a020d3b7b2_styler,
+            ...{
+}
+        });
+
+        function geo_json_9e4aca8ae829d4d945f060a020d3b7b2_add (data) {
+            geo_json_9e4aca8ae829d4d945f060a020d3b7b2
+                .addData(data);
+        }
+            geo_json_9e4aca8ae829d4d945f060a020d3b7b2_add({"features": [{"geometry": {"coordinates": [[[-83.50920975774173, 41.46494798181602], [-83.5092097580721, 41.464588655737664], [-83.5095690840003, 41.46458865535042], [-83.50956908446052, 41.465217476308666], [-83.51046739902459, 41.46521747643567], [-83.51046739902071, 41.46494798178991], [-83.51019790494796, 41.46494798107846], [-83.51019790501731, 41.46458865546848], [-83.51082672556007, 41.46458865516224], [-83.51109622062914, 41.46431916054197], [-83.51109622042173, 41.463331014071], [-83.51136571442726, 41.46306151968573], [-83.51172504117801, 41.46306151951193], [-83.51172504129077, 41.46369034031135], [-83.5113657150756, 41.46369033995066], [-83.51136571452803, 41.464319160486596], [-83.51136571517632, 41.46494798152785], [-83.51172504063648, 41.46494798118616], [-83.5117250409073, 41.465576802264536], [-83.50920975873755, 41.46557680246168], [-83.50920975774173, 41.46494798181602]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_9e4aca8ae829d4d945f060a020d3b7b2.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623000245685<br><b>Crop:</b> Soybeans<br><b>Area:</b> 5.8 acres<br><b>Dominant Soil:</b> Hoytville<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_9e4aca8ae829d4d945f060a020d3b7b2.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_4d409b46e2529623d933f4e96aae378b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#f1c40f", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_4d409b46e2529623d933f4e96aae378b_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_4d409b46e2529623d933f4e96aae378b = L.geoJson(null, {
+                onEachFeature: geo_json_4d409b46e2529623d933f4e96aae378b_onEachFeature,
+            
+                style: geo_json_4d409b46e2529623d933f4e96aae378b_styler,
+            ...{
+}
+        });
+
+        function geo_json_4d409b46e2529623d933f4e96aae378b_add (data) {
+            geo_json_4d409b46e2529623d933f4e96aae378b
+                .addData(data);
+        }
+            geo_json_4d409b46e2529623d933f4e96aae378b_add({"features": [{"geometry": {"coordinates": [[[-83.22930927752942, 41.328569043365206], [-83.22930927717114, 41.32829954947683], [-83.22903978292508, 41.32803005466096], [-83.22868045632973, 41.327670727949545], [-83.22841096213823, 41.327670728167305], [-83.22841096276832, 41.32677241345527], [-83.22805163602817, 41.326772413190184], [-83.22805163575735, 41.32641308709987], [-83.22805163559454, 41.32614359238983], [-83.22930927778718, 41.32605376105746], [-83.22966860396053, 41.32605376080905], [-83.22993809864687, 41.32605376131906], [-83.22993809877195, 41.32614359233953], [-83.23209405475185, 41.326143592705954], [-83.23245338112454, 41.32614359273196], [-83.23245338124556, 41.32641308665177], [-83.23272287498315, 41.3264130873794], [-83.23308220121355, 41.326413087292174], [-83.23308220158032, 41.32677241352515], [-83.23272287606639, 41.326772412966434], [-83.23272287586302, 41.327041907810056], [-83.23272287694623, 41.327401233607986], [-83.23245338177797, 41.32767072824105], [-83.23209405494318, 41.32767072804771], [-83.23119573927468, 41.32767072870505], [-83.23083641298787, 41.327670728644186], [-83.2305669194058, 41.32803005505283], [-83.23056691844376, 41.32829954916026], [-83.23029742386551, 41.32892836995722], [-83.22903978314739, 41.32892836970975], [-83.22903978261346, 41.32856904337484], [-83.22930927752942, 41.328569043365206]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_4d409b46e2529623d933f4e96aae378b.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623003947189<br><b>Crop:</b> Corn<br><b>Area:</b> 20.2 acres<br><b>Dominant Soil:</b> Dunbridge<br><b>Component %:</b> 90%<br><b>Drainage:</b> Well drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_4d409b46e2529623d933f4e96aae378b.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_1d785f0050aaf76e299ff92d6dd7827c_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3498db", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_1d785f0050aaf76e299ff92d6dd7827c_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_1d785f0050aaf76e299ff92d6dd7827c = L.geoJson(null, {
+                onEachFeature: geo_json_1d785f0050aaf76e299ff92d6dd7827c_onEachFeature,
+            
+                style: geo_json_1d785f0050aaf76e299ff92d6dd7827c_styler,
+            ...{
+}
+        });
+
+        function geo_json_1d785f0050aaf76e299ff92d6dd7827c_add (data) {
+            geo_json_1d785f0050aaf76e299ff92d6dd7827c
+                .addData(data);
+        }
+            geo_json_1d785f0050aaf76e299ff92d6dd7827c_add({"features": [{"geometry": {"coordinates": [[[-82.88845621493495, 41.31546398326747], [-82.88845621558417, 41.3151046564216], [-82.8890850365563, 41.315104655903184], [-82.88944436154871, 41.315104656408124], [-82.8894443623572, 41.31546398288539], [-82.8897138554708, 41.31546398194506], [-82.8897138562541, 41.31573347656841], [-82.8897138572434, 41.31609280313285], [-82.88971385683433, 41.3163622977909], [-82.88872570957639, 41.316362297056834], [-82.88845621482051, 41.31573347648971], [-82.88845621493495, 41.31546398326747]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_1d785f0050aaf76e299ff92d6dd7827c.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004307950<br><b>Crop:</b> Soybeans<br><b>Area:</b> 3.2 acres<br><b>Dominant Soil:</b> Hoytville<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_1d785f0050aaf76e299ff92d6dd7827c.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_7c8a8b25b132f38c77ca47ff0842490c_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#3498db", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_7c8a8b25b132f38c77ca47ff0842490c_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_7c8a8b25b132f38c77ca47ff0842490c = L.geoJson(null, {
+                onEachFeature: geo_json_7c8a8b25b132f38c77ca47ff0842490c_onEachFeature,
+            
+                style: geo_json_7c8a8b25b132f38c77ca47ff0842490c_styler,
+            ...{
+}
+        });
+
+        function geo_json_7c8a8b25b132f38c77ca47ff0842490c_add (data) {
+            geo_json_7c8a8b25b132f38c77ca47ff0842490c
+                .addData(data);
+        }
+            geo_json_7c8a8b25b132f38c77ca47ff0842490c_add({"features": [{"geometry": {"coordinates": [[[-84.14662150482151, 41.266798323567144], [-84.14662150382811, 41.266438997775474], [-84.14698083088804, 41.26616950303404], [-84.14725032481111, 41.26616950267995], [-84.14725032480416, 41.26679832317936], [-84.14760965174388, 41.26679832348606], [-84.1476096512652, 41.26778647045925], [-84.14760965062204, 41.267966133671], [-84.14509436860203, 41.267966133729104], [-84.14509436833764, 41.26778647073677], [-84.14536386355262, 41.26742714458033], [-84.1459926840685, 41.26742714449825], [-84.14635201035578, 41.26715764961517], [-84.14662150482151, 41.266798323567144]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_7c8a8b25b132f38c77ca47ff0842490c.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623001532050<br><b>Crop:</b> Soybeans<br><b>Area:</b> 5.6 acres<br><b>Dominant Soil:</b> Hoytville<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_7c8a8b25b132f38c77ca47ff0842490c.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+        function geo_json_9ca4c65e00beeab0e43f6c0df12d63a6_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#ff9800", "fillOpacity": 0.7, "weight": 2};
+            }
+        }
+
+        function geo_json_9ca4c65e00beeab0e43f6c0df12d63a6_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_9ca4c65e00beeab0e43f6c0df12d63a6 = L.geoJson(null, {
+                onEachFeature: geo_json_9ca4c65e00beeab0e43f6c0df12d63a6_onEachFeature,
+            
+                style: geo_json_9ca4c65e00beeab0e43f6c0df12d63a6_styler,
+            ...{
+}
+        });
+
+        function geo_json_9ca4c65e00beeab0e43f6c0df12d63a6_add (data) {
+            geo_json_9ca4c65e00beeab0e43f6c0df12d63a6
+                .addData(data);
+        }
+            geo_json_9ca4c65e00beeab0e43f6c0df12d63a6_add({"features": [{"geometry": {"coordinates": [[[-83.18157649311632, 41.483808266104475], [-83.18121716590277, 41.48344894051466], [-83.18058834605485, 41.48344894073965], [-83.17969002990982, 41.483448940402745], [-83.17933070489858, 41.48344893991519], [-83.17906120995939, 41.48344894034855], [-83.17870188326556, 41.48344894063635], [-83.17843238935973, 41.483448940754876], [-83.1780730625036, 41.48344894016752], [-83.17807306235746, 41.483179446000015], [-83.17717474760255, 41.483179445885064], [-83.17717474789535, 41.48344894041313], [-83.17654592686827, 41.48344894055037], [-83.17403064457694, 41.483448940228094], [-83.17403064437498, 41.481562478062195], [-83.17744424187025, 41.48156247827531], [-83.17744424190329, 41.48129298348445], [-83.17780356796476, 41.48129298325243], [-83.17807306350365, 41.481292983645076], [-83.1780730634875, 41.481562478195535], [-83.17843238940485, 41.48156247785349], [-83.17870188325992, 41.48156247845602], [-83.17870188371363, 41.48192180405943], [-83.18220531360524, 41.48192180466381], [-83.18283413421422, 41.481921804275736], [-83.18298361914509, 41.482940128758536], [-83.18301379746117, 41.4831794455432], [-83.1830137969118, 41.48344894044421], [-83.1828341343671, 41.4840777611194], [-83.18283413407518, 41.48443708722403], [-83.18220531299792, 41.48443708711856], [-83.1818459866303, 41.484437086830525], [-83.18157649311632, 41.483808266104475]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_9ca4c65e00beeab0e43f6c0df12d63a6.bindTooltip(
+                `<div>
+                     <b>Field ID:</b> 391623004303760<br><b>Crop:</b> Soybeans<br><b>Area:</b> 37.8 acres<br><b>Dominant Soil:</b> Toledo<br><b>Component %:</b> 90%<br><b>Drainage:</b> Very poorly drained
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_9ca4c65e00beeab0e43f6c0df12d63a6.addTo(map_d97a3e24dbcc25713a2433d083892be9);
+        
+    
+            var layer_control_b606933539f7f82fedd81a49f7629b8c_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_7a3f5bfac7d30e782115959b412182e2,
+                    "Satellite" : tile_layer_79dd886473fe0bde5e38d735f99b94a9,
+                    "Street Map" : tile_layer_a1b16ed29e2ccf24567c744fef5811a7,
+                },
+                overlays :  {
+                    "macro_element_8820d4a3b66526dea66a963b45e9dcf5" : geo_json_8820d4a3b66526dea66a963b45e9dcf5,
+                    "macro_element_163b6cad8d8b65cd467405dfb6b0aeeb" : geo_json_163b6cad8d8b65cd467405dfb6b0aeeb,
+                    "macro_element_d2572a5e27b041ba0e66f71b340589aa" : geo_json_d2572a5e27b041ba0e66f71b340589aa,
+                    "macro_element_fb68dac3729b70964d1f0eaa34f396bf" : geo_json_fb68dac3729b70964d1f0eaa34f396bf,
+                    "macro_element_81d5f5db471d56cc7d42c87f9ee62e29" : geo_json_81d5f5db471d56cc7d42c87f9ee62e29,
+                    "macro_element_60b40723d1b767709df1522b083baa04" : geo_json_60b40723d1b767709df1522b083baa04,
+                    "macro_element_4a812902ac76d4a4732a688b2d203ee0" : geo_json_4a812902ac76d4a4732a688b2d203ee0,
+                    "macro_element_d44016916278c1ae707a5a15223b98ae" : geo_json_d44016916278c1ae707a5a15223b98ae,
+                    "macro_element_c0a0aa12082b88fb3eeb4bd9c34825b0" : geo_json_c0a0aa12082b88fb3eeb4bd9c34825b0,
+                    "macro_element_964e8477ed75da1ed8633fc358fb9277" : geo_json_964e8477ed75da1ed8633fc358fb9277,
+                    "macro_element_7386113f28ea33740bde5781ad155cb0" : geo_json_7386113f28ea33740bde5781ad155cb0,
+                    "macro_element_5aad1fe52d9d0ab77dff61893e31c3c2" : geo_json_5aad1fe52d9d0ab77dff61893e31c3c2,
+                    "macro_element_33300e2f1772be940f07ab946135b9f2" : geo_json_33300e2f1772be940f07ab946135b9f2,
+                    "macro_element_608ae47cb771fd3b79e6e27050b91186" : geo_json_608ae47cb771fd3b79e6e27050b91186,
+                    "macro_element_4ec54ada4e722a0b5a8ad7edf31b9216" : geo_json_4ec54ada4e722a0b5a8ad7edf31b9216,
+                    "macro_element_9e4aca8ae829d4d945f060a020d3b7b2" : geo_json_9e4aca8ae829d4d945f060a020d3b7b2,
+                    "macro_element_4d409b46e2529623d933f4e96aae378b" : geo_json_4d409b46e2529623d933f4e96aae378b,
+                    "macro_element_1d785f0050aaf76e299ff92d6dd7827c" : geo_json_1d785f0050aaf76e299ff92d6dd7827c,
+                    "macro_element_7c8a8b25b132f38c77ca47ff0842490c" : geo_json_7c8a8b25b132f38c77ca47ff0842490c,
+                    "macro_element_9ca4c65e00beeab0e43f6c0df12d63a6" : geo_json_9ca4c65e00beeab0e43f6c0df12d63a6,
+                },
+            };
+            let layer_control_b606933539f7f82fedd81a49f7629b8c = L.control.layers(
+                layer_control_b606933539f7f82fedd81a49f7629b8c_layers.base_layers,
+                layer_control_b606933539f7f82fedd81a49f7629b8c_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_d97a3e24dbcc25713a2433d083892be9);
+
+        
+</script>
+</html>
