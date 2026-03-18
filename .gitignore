@@ -127,3 +127,9 @@ tmp/
 temp/
 data/cdl/*.tif
 data/cdl/
+
+# Raster/GeoTIFF files
+*.tif
+*.tiff
+*.img
+
