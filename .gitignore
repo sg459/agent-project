@@ -126,3 +126,4 @@ test-results/
 tmp/
 temp/
 data/cdl/*.tif
+data/cdl/
