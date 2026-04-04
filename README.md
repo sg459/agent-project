@@ -1,3 +1,58 @@
+# Field Analytics Dashboard
+
+A production-ready agricultural field analytics dashboard providing real-time monitoring, visualization, and AI-powered advisories for farm management.
+
+## Features
+
+- **5 Integrated Visualizations** from assignments #3-8:
+  - Geospatial Map (Fields + Soil/NDVI)
+  - Weather Time-Series (Temperature & Precipitation)
+  - Soil Health Metrics
+  - Vegetation Health (NDVI)
+  - EDA Relationship Plot
+- **Dynamic Advisory System** - Automated alerts based on NDVI, yield, and acreage thresholds
+- **Interactive Filtering** - Filter fields by ID and soil type
+- **Self-Contained** - Works offline with no external dependencies
+
+## Technologies
+
+- **HTML5/CSS3** - Static dashboard with embedded styles
+- **JavaScript (ES6+)** - Client-side rendering and interactivity
+- **Data Visualization** - Matplotlib/Seaborn (Python) for generated charts
+- **Cloudflare Workers** - Backend authentication (optional)
+- **SQLite** - Local data storage
+
+## Running the Dashboard
+
+### Option 1: Static HTML File (Recommended)
+
+Open directly in any browser:
+
+```bash
+# Navigate to the static dashboard
+open output/static-dashboard/dashboard.html
+```
+
+Or start a simple HTTP server:
+
+```bash
+cd output/static-dashboard
+python3 -m http.server 8080
+# Then open http://localhost:8080/dashboard.html
+```
+
+### Option 2: Development Server
+
+```bash
+cd apps/web
+npm run dev
+# Then open http://localhost:8080/dashboard.html
+```
+
+> **Note:** The dev server requires Cloudflare Workers for authentication. Use Option 1 for offline access.
+
+---
+
 # agent-project: AGENTS.md-First Agentic Coding Template
 
 > **A production-ready template for teams shipping with AI coding agents.**
